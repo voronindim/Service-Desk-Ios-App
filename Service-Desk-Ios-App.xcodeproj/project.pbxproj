@@ -30,6 +30,12 @@
 		283239CF2740024600D65876 /* TasksListItemViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239CE2740024600D65876 /* TasksListItemViewState.swift */; };
 		283239D12740044100D65876 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239D02740044100D65876 /* ViewState.swift */; };
 		283239D42740065800D65876 /* ViewErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239D32740065800D65876 /* ViewErrorType.swift */; };
+		283239DA274138A900D65876 /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239D9274138A900D65876 /* TasksListViewController.swift */; };
+		283239DD27413EAB00D65876 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239DC27413EAB00D65876 /* Coordinator.swift */; };
+		283239DF27416FCD00D65876 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239DE27416FCD00D65876 /* ViewControllerFactory.swift */; };
+		283239E3274170C500D65876 /* AppModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239E2274170C500D65876 /* AppModelFactory.swift */; };
+		283239E6274171AD00D65876 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239E5274171AD00D65876 /* ViewModelFactory.swift */; };
+		283239EA2741723900D65876 /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239E92741723900D65876 /* UseCaseFactory.swift */; };
 		75283CBB6357DBE369F32A67 /* Pods_Service_Desk_Ios_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +65,12 @@
 		283239CE2740024600D65876 /* TasksListItemViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListItemViewState.swift; sourceTree = "<group>"; };
 		283239D02740044100D65876 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		283239D32740065800D65876 /* ViewErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewErrorType.swift; sourceTree = "<group>"; };
+		283239D9274138A900D65876 /* TasksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewController.swift; sourceTree = "<group>"; };
+		283239DC27413EAB00D65876 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		283239DE27416FCD00D65876 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		283239E2274170C500D65876 /* AppModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelFactory.swift; sourceTree = "<group>"; };
+		283239E5274171AD00D65876 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		283239E92741723900D65876 /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Service_Desk_Ios_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		851D445C0F11E4C70BAF16BF /* Pods-Service-Desk-Ios-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.release.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.release.xcconfig"; sourceTree = "<group>"; };
 		CDBB9B1D2DA4341FBB4F3440 /* Pods-Service-Desk-Ios-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.debug.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +135,8 @@
 		283239A1273FCDAA00D65876 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				283239E72741722000D65876 /* UseCaseFactory */,
+				283239E1274170B500D65876 /* AppModelFactory */,
 				283239C4273FFCA700D65876 /* States */,
 				283239C1273FFBAD00D65876 /* AppModels */,
 				283239B0273FEA8800D65876 /* UseCases */,
@@ -190,6 +204,9 @@
 		283239C8273FFFAE00D65876 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				283239E027416FD000D65876 /* ViewControllerFactory */,
+				283239DB27413E7F00D65876 /* Coordinators */,
+				283239D62741386D00D65876 /* UI */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -197,6 +214,7 @@
 		283239C9273FFFBF00D65876 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				283239E42741719D00D65876 /* ViewModelFactory */,
 				283239CD2740022B00D65876 /* ViewStates */,
 				283239CA2740008700D65876 /* ViewModels */,
 				283239D02740044100D65876 /* ViewState.swift */,
@@ -219,6 +237,54 @@
 				283239CE2740024600D65876 /* TasksListItemViewState.swift */,
 			);
 			path = ViewStates;
+			sourceTree = "<group>";
+		};
+		283239D62741386D00D65876 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				283239D9274138A900D65876 /* TasksListViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		283239DB27413E7F00D65876 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				283239DC27413EAB00D65876 /* Coordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		283239E027416FD000D65876 /* ViewControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				283239DE27416FCD00D65876 /* ViewControllerFactory.swift */,
+			);
+			path = ViewControllerFactory;
+			sourceTree = "<group>";
+		};
+		283239E1274170B500D65876 /* AppModelFactory */ = {
+			isa = PBXGroup;
+			children = (
+				283239E2274170C500D65876 /* AppModelFactory.swift */,
+			);
+			path = AppModelFactory;
+			sourceTree = "<group>";
+		};
+		283239E42741719D00D65876 /* ViewModelFactory */ = {
+			isa = PBXGroup;
+			children = (
+				283239E5274171AD00D65876 /* ViewModelFactory.swift */,
+			);
+			path = ViewModelFactory;
+			sourceTree = "<group>";
+		};
+		283239E72741722000D65876 /* UseCaseFactory */ = {
+			isa = PBXGroup;
+			children = (
+				283239E92741723900D65876 /* UseCaseFactory.swift */,
+			);
+			path = UseCaseFactory;
 			sourceTree = "<group>";
 		};
 		6AD2689663FFC942FF09C8B7 /* Pods */ = {
@@ -356,18 +422,24 @@
 				283239A4273FE74D00D65876 /* Task.swift in Sources */,
 				283239C3273FFBC300D65876 /* TaskAppModel.swift in Sources */,
 				283239CF2740024600D65876 /* TasksListItemViewState.swift in Sources */,
+				283239E6274171AD00D65876 /* ViewModelFactory.swift in Sources */,
 				283239D12740044100D65876 /* ViewState.swift in Sources */,
+				283239DA274138A900D65876 /* TasksListViewController.swift in Sources */,
 				283239C6273FFCB800D65876 /* TaskAppState.swift in Sources */,
+				283239DD27413EAB00D65876 /* Coordinator.swift in Sources */,
 				28323991273FB24C00D65876 /* ViewController.swift in Sources */,
 				2832398D273FB24C00D65876 /* AppDelegate.swift in Sources */,
 				283239CC2740009500D65876 /* TasksListViewModel.swift in Sources */,
 				283239AD273FE87100D65876 /* TaskStatus.swift in Sources */,
+				283239EA2741723900D65876 /* UseCaseFactory.swift in Sources */,
 				283239B3273FEB0200D65876 /* TasksListUseCase.swift in Sources */,
 				283239A9273FE7FC00D65876 /* Employee.swift in Sources */,
 				283239B5273FEB1700D65876 /* TasksLIstUseCaseImplementation.swift in Sources */,
 				2832398F273FB24C00D65876 /* SceneDelegate.swift in Sources */,
 				283239D42740065800D65876 /* ViewErrorType.swift in Sources */,
 				283239AF273FEA6600D65876 /* TasksListAppModel.swift in Sources */,
+				283239DF27416FCD00D65876 /* ViewControllerFactory.swift in Sources */,
+				283239E3274170C500D65876 /* AppModelFactory.swift in Sources */,
 				283239BA273FF6CE00D65876 /* TasksListAppState.swift in Sources */,
 				283239C0273FFB1700D65876 /* TaskUseCaseImplmplementation.swift in Sources */,
 				283239BE273FFB0600D65876 /* TaskUseCase.swift in Sources */,
