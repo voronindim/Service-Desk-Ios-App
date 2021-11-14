@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewControllerFactory = ViewControllerFactory(viewModelFactory: viewModelFactory)
         coordinator = Coordinator(navigationController: navigationController, viewControllerFactory: viewControllerFactory)
         coordinator?.showTasksListViewController()
+        
         window?.makeKeyAndVisible()
         
     }

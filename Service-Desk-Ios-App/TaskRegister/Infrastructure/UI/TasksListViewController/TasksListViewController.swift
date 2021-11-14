@@ -29,6 +29,7 @@ class TasksListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCells()
         setupNavigationBar()
         setup()
         subscribeOnViewModel()
@@ -80,6 +81,10 @@ class TasksListViewController: UIViewController {
         }
     }
     
+    func registerCells() {
+        tasksListTableView.register(UINib(nibName: TasksListTableViewCell.reuseIdentidier, bundle: Bundle(for: TasksListTableViewCell.self)), forCellReuseIdentifier: TasksListTableViewCell.reuseIdentidier)
+    }
+    
 }
 
 // MARK: - UITableViewDelegate
@@ -87,7 +92,7 @@ class TasksListViewController: UIViewController {
 extension TasksListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        coordinator?.showTasksListViewController()
     }
 }
 
@@ -99,7 +104,11 @@ extension TasksListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: TasksListTableViewCell.reuseIdentidier, for: indexPath) as! TasksListTableViewCell
+        if let viewState = viewModel?.currentViewItems?[indexPath.row] {
+            cell.setViewState(viewState)
+        }
+        return cell
     }
     
     

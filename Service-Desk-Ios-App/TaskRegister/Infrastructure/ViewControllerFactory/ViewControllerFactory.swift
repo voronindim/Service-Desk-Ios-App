@@ -20,4 +20,10 @@ final class ViewControllerFactory {
         tasksListViewController.viewModel = viewModelFactory.tasksListViewModel()
         return tasksListViewController
     }
+    
+    func taskViewController() -> TaskViewController {
+        let taskViewController = TaskViewController()
+        // TODO: set view model
+        return taskViewController
+    }
 }

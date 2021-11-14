@@ -34,4 +34,10 @@ extension Coordinator {
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func showTaskViewController() {
+        let viewController = viewControllerFactory.taskViewController()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }

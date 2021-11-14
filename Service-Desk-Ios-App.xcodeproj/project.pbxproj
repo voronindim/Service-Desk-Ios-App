@@ -36,6 +36,11 @@
 		283239E3274170C500D65876 /* AppModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239E2274170C500D65876 /* AppModelFactory.swift */; };
 		283239E6274171AD00D65876 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239E5274171AD00D65876 /* ViewModelFactory.swift */; };
 		283239EA2741723900D65876 /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239E92741723900D65876 /* UseCaseFactory.swift */; };
+		283239EF274176C900D65876 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239EE274176C900D65876 /* TaskViewController.swift */; };
+		283239F22741788800D65876 /* TasksListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239F02741788800D65876 /* TasksListTableViewCell.swift */; };
+		283239F32741788800D65876 /* TasksListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 283239F12741788800D65876 /* TasksListTableViewCell.xib */; };
+		283239F627417CE700D65876 /* TaskStatusToStringWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239F527417CE700D65876 /* TaskStatusToStringWithColor.swift */; };
+		283239F927417E6B00D65876 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239F827417E6B00D65876 /* DateExtensions.swift */; };
 		75283CBB6357DBE369F32A67 /* Pods_Service_Desk_Ios_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +76,11 @@
 		283239E2274170C500D65876 /* AppModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelFactory.swift; sourceTree = "<group>"; };
 		283239E5274171AD00D65876 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		283239E92741723900D65876 /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
+		283239EE274176C900D65876 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		283239F02741788800D65876 /* TasksListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListTableViewCell.swift; sourceTree = "<group>"; };
+		283239F12741788800D65876 /* TasksListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksListTableViewCell.xib; sourceTree = "<group>"; };
+		283239F527417CE700D65876 /* TaskStatusToStringWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusToStringWithColor.swift; sourceTree = "<group>"; };
+		283239F827417E6B00D65876 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Service_Desk_Ios_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		851D445C0F11E4C70BAF16BF /* Pods-Service-Desk-Ios-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.release.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.release.xcconfig"; sourceTree = "<group>"; };
 		CDBB9B1D2DA4341FBB4F3440 /* Pods-Service-Desk-Ios-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.debug.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +214,7 @@
 		283239C8273FFFAE00D65876 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				283239F427417CBA00D65876 /* Extensions */,
 				283239E027416FD000D65876 /* ViewControllerFactory */,
 				283239DB27413E7F00D65876 /* Coordinators */,
 				283239D62741386D00D65876 /* UI */,
@@ -242,7 +253,8 @@
 		283239D62741386D00D65876 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				283239D9274138A900D65876 /* TasksListViewController.swift */,
+				283239ED274176B800D65876 /* TaskViewController */,
+				283239EB274174FE00D65876 /* TasksListViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -285,6 +297,41 @@
 				283239E92741723900D65876 /* UseCaseFactory.swift */,
 			);
 			path = UseCaseFactory;
+			sourceTree = "<group>";
+		};
+		283239EB274174FE00D65876 /* TasksListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				283239EC2741750D00D65876 /* Cells */,
+				283239D9274138A900D65876 /* TasksListViewController.swift */,
+			);
+			path = TasksListViewController;
+			sourceTree = "<group>";
+		};
+		283239EC2741750D00D65876 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				283239F02741788800D65876 /* TasksListTableViewCell.swift */,
+				283239F12741788800D65876 /* TasksListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		283239ED274176B800D65876 /* TaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				283239EE274176C900D65876 /* TaskViewController.swift */,
+			);
+			path = TaskViewController;
+			sourceTree = "<group>";
+		};
+		283239F427417CBA00D65876 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				283239F527417CE700D65876 /* TaskStatusToStringWithColor.swift */,
+				283239F827417E6B00D65876 /* DateExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6AD2689663FFC942FF09C8B7 /* Pods */ = {
@@ -364,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283239F32741788800D65876 /* TasksListTableViewCell.xib in Resources */,
 				28323999273FB24E00D65876 /* LaunchScreen.storyboard in Resources */,
 				28323996273FB24E00D65876 /* Assets.xcassets in Resources */,
 				28323994273FB24C00D65876 /* Main.storyboard in Resources */,
@@ -427,7 +475,10 @@
 				283239DA274138A900D65876 /* TasksListViewController.swift in Sources */,
 				283239C6273FFCB800D65876 /* TaskAppState.swift in Sources */,
 				283239DD27413EAB00D65876 /* Coordinator.swift in Sources */,
+				283239F22741788800D65876 /* TasksListTableViewCell.swift in Sources */,
+				283239EF274176C900D65876 /* TaskViewController.swift in Sources */,
 				28323991273FB24C00D65876 /* ViewController.swift in Sources */,
+				283239F927417E6B00D65876 /* DateExtensions.swift in Sources */,
 				2832398D273FB24C00D65876 /* AppDelegate.swift in Sources */,
 				283239CC2740009500D65876 /* TasksListViewModel.swift in Sources */,
 				283239AD273FE87100D65876 /* TaskStatus.swift in Sources */,
@@ -436,6 +487,7 @@
 				283239A9273FE7FC00D65876 /* Employee.swift in Sources */,
 				283239B5273FEB1700D65876 /* TasksLIstUseCaseImplementation.swift in Sources */,
 				2832398F273FB24C00D65876 /* SceneDelegate.swift in Sources */,
+				283239F627417CE700D65876 /* TaskStatusToStringWithColor.swift in Sources */,
 				283239D42740065800D65876 /* ViewErrorType.swift in Sources */,
 				283239AF273FEA6600D65876 /* TasksListAppModel.swift in Sources */,
 				283239DF27416FCD00D65876 /* ViewControllerFactory.swift in Sources */,
