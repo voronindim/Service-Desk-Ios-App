@@ -143,7 +143,7 @@ class TaskViewController: UIViewController {
         let closedWithColor = taskStatusToStringWithColor(.closed)
         let closedAction = UIAlertAction(title: closedWithColor.text + " \u{263A}", style: .default, handler: { [weak self] _ in
             self?.viewModel?.statusDidChanges(.closed, completion: {
-                self?.tableView.reloadSections([0], with: .bottom)
+                self?.tableView.reloadSections([0], with: .automatic)
             })
         })
         closedAction.setValue(closedWithColor.color, forKey: "titleTextColor")
@@ -152,7 +152,7 @@ class TaskViewController: UIViewController {
         let reviewWithColor = taskStatusToStringWithColor(.review)
         let reviewAction = UIAlertAction(title: reviewWithColor.text + " \u{1F974}", style: .default, handler: { [weak self] _ in
             self?.viewModel?.statusDidChanges(.review, completion: {
-                self?.tableView.reloadSections([0], with: .right)
+                self?.tableView.reloadSections([0], with: .automatic)
             })
         })
         reviewAction.setValue(reviewWithColor.color, forKey: "titleTextColor")
@@ -170,7 +170,7 @@ class TaskViewController: UIViewController {
         let notStartedWithColor = taskStatusToStringWithColor(.notStarted)
         let notStartedAction = UIAlertAction(title: notStartedWithColor.text + " \u{1F975}", style: .default, handler: { [weak self] _ in
             self?.viewModel?.statusDidChanges(.notStarted, completion: {
-                self?.tableView.reloadSections([0], with: .left)
+                self?.tableView.reloadSections([0], with: .automatic)
             })
         })
         notStartedAction.setValue(notStartedWithColor.color, forKey: "titleTextColor")

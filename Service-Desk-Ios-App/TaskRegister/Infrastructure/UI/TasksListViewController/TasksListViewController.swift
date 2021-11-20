@@ -21,11 +21,12 @@ class TasksListViewController: UIViewController {
     private let tasksListTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.keyboardDismissMode = .onDrag
         return tableView
     }()
     
+    private let searchController = UISearchController(searchResultsController: nil)
     private let loadingAnimationView = AnimationView()
-    
     private let disposeBag = DisposeBag()
     
     // MARK: - ViewDidLoad
@@ -37,7 +38,7 @@ class TasksListViewController: UIViewController {
         setupNavigationBar()
         setup()
         setupAnimationView()
-        setupSearchBar()
+        setupSearchController()
         setupRefreshControl()
         subscribeOnViewModel()
     }
@@ -81,12 +82,13 @@ class TasksListViewController: UIViewController {
         
     }
     
-    private func setupSearchBar() {
-        // TODO: Нужно исправить. Появился какой то лишний скролл.
-        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: tasksListTableView.frame.size.width, height: 44.0))
-        searchBar.delegate = self
-        searchBar.backgroundImage = UIImage()
-        tasksListTableView.tableHeaderView = searchBar
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.sizeToFit()
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
     }
     
     private func setConstraints() {
@@ -177,10 +179,10 @@ extension TasksListViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UISearchBarDelegate
+// MARK: - UISearchResultsUpdating
 
-extension TasksListViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel?.filterTextDidChanged(searchText)
+extension TasksListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel?.filterTextDidChanged(searchController.searchBar.text ?? "")
     }
 }

@@ -55,6 +55,12 @@
 		2887C0BC2749491700B4E664 /* ChangeStatusUseCaseImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0BB2749491700B4E664 /* ChangeStatusUseCaseImplementation.swift */; };
 		2887C0BF2749510100B4E664 /* loading-indicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 2887C0BE2749510100B4E664 /* loading-indicator.json */; };
 		2887C0C2274958BB00B4E664 /* InfoToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0C1274958BB00B4E664 /* InfoToast.swift */; };
+		2887C0C42749ABC100B4E664 /* EditTaskAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0C32749ABC100B4E664 /* EditTaskAppModel.swift */; };
+		2887C0C62749AC4600B4E664 /* EditTaskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0C52749AC4600B4E664 /* EditTaskState.swift */; };
+		2887C0C82749AE3F00B4E664 /* EditTaskUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0C72749AE3F00B4E664 /* EditTaskUseCase.swift */; };
+		2887C0CB2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0CA2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift */; };
+		2887C0CD2749AF4900B4E664 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0CC2749AF4900B4E664 /* EditTaskViewModel.swift */; };
+		2887C0CF2749B12600B4E664 /* EditTaskViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0CE2749B12600B4E664 /* EditTaskViewState.swift */; };
 		75283CBB6357DBE369F32A67 /* Pods_Service_Desk_Ios_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +115,12 @@
 		2887C0BB2749491700B4E664 /* ChangeStatusUseCaseImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusUseCaseImplementation.swift; sourceTree = "<group>"; };
 		2887C0BE2749510100B4E664 /* loading-indicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-indicator.json"; sourceTree = "<group>"; };
 		2887C0C1274958BB00B4E664 /* InfoToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoToast.swift; sourceTree = "<group>"; };
+		2887C0C32749ABC100B4E664 /* EditTaskAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskAppModel.swift; sourceTree = "<group>"; };
+		2887C0C52749AC4600B4E664 /* EditTaskState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskState.swift; sourceTree = "<group>"; };
+		2887C0C72749AE3F00B4E664 /* EditTaskUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskUseCase.swift; sourceTree = "<group>"; };
+		2887C0CA2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskUseCaseImplementation.swift; sourceTree = "<group>"; };
+		2887C0CC2749AF4900B4E664 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
+		2887C0CE2749B12600B4E664 /* EditTaskViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewState.swift; sourceTree = "<group>"; };
 		3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Service_Desk_Ios_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		851D445C0F11E4C70BAF16BF /* Pods-Service-Desk-Ios-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.release.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.release.xcconfig"; sourceTree = "<group>"; };
 		CDBB9B1D2DA4341FBB4F3440 /* Pods-Service-Desk-Ios-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.debug.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +209,7 @@
 		283239B0273FEA8800D65876 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				2887C0C92749AE4A00B4E664 /* EditTaskUseCase */,
 				2887C0B8274948BE00B4E664 /* ChangeStatusUseCase */,
 				283239BC273FF88D00D65876 /* TaskUseCase */,
 				283239B1273FEAE400D65876 /* TasksListUseCase */,
@@ -228,6 +241,7 @@
 			children = (
 				283239AE273FEA6600D65876 /* TasksListAppModel.swift */,
 				283239C2273FFBC300D65876 /* TaskAppModel.swift */,
+				2887C0C32749ABC100B4E664 /* EditTaskAppModel.swift */,
 			);
 			path = AppModels;
 			sourceTree = "<group>";
@@ -237,6 +251,7 @@
 			children = (
 				283239B9273FF6CE00D65876 /* TasksListAppState.swift */,
 				283239C5273FFCB800D65876 /* TaskAppState.swift */,
+				2887C0C52749AC4600B4E664 /* EditTaskState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -270,6 +285,7 @@
 			children = (
 				283239CB2740009500D65876 /* TasksListViewModel.swift */,
 				2887C09D274908C000B4E664 /* TaskViewModel.swift */,
+				2887C0CC2749AF4900B4E664 /* EditTaskViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -279,6 +295,7 @@
 			children = (
 				2887C0A127490ACA00B4E664 /* TaskViewState.swift */,
 				283239CE2740024600D65876 /* TasksListItemViewState.swift */,
+				2887C0CE2749B12600B4E664 /* EditTaskViewState.swift */,
 			);
 			path = ViewStates;
 			sourceTree = "<group>";
@@ -440,6 +457,15 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
+		2887C0C92749AE4A00B4E664 /* EditTaskUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				2887C0C72749AE3F00B4E664 /* EditTaskUseCase.swift */,
+				2887C0CA2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift */,
+			);
+			path = EditTaskUseCase;
+			sourceTree = "<group>";
+		};
 		6AD2689663FFC942FF09C8B7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,16 +608,20 @@
 				283239C3273FFBC300D65876 /* TaskAppModel.swift in Sources */,
 				283239CF2740024600D65876 /* TasksListItemViewState.swift in Sources */,
 				283239E6274171AD00D65876 /* ViewModelFactory.swift in Sources */,
+				2887C0CF2749B12600B4E664 /* EditTaskViewState.swift in Sources */,
 				283239D12740044100D65876 /* ViewState.swift in Sources */,
 				283239DA274138A900D65876 /* TasksListViewController.swift in Sources */,
 				283239C6273FFCB800D65876 /* TaskAppState.swift in Sources */,
 				283239DD27413EAB00D65876 /* Coordinator.swift in Sources */,
 				283239F22741788800D65876 /* TasksListTableViewCell.swift in Sources */,
+				2887C0CB2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift in Sources */,
 				2887C0B12749129700B4E664 /* UserTableTableViewCell.swift in Sources */,
 				283239EF274176C900D65876 /* TaskViewController.swift in Sources */,
 				2887C0BA274948D200B4E664 /* ChangeStatusUseCase.swift in Sources */,
+				2887C0C42749ABC100B4E664 /* EditTaskAppModel.swift in Sources */,
 				28323991273FB24C00D65876 /* ViewController.swift in Sources */,
 				2887C0C2274958BB00B4E664 /* InfoToast.swift in Sources */,
+				2887C0C62749AC4600B4E664 /* EditTaskState.swift in Sources */,
 				283239F927417E6B00D65876 /* DateExtensions.swift in Sources */,
 				2887C0AC2749115C00B4E664 /* TitleAndEndDateTableViewCell.swift in Sources */,
 				2832398D273FB24C00D65876 /* AppDelegate.swift in Sources */,
@@ -604,6 +634,7 @@
 				283239A9273FE7FC00D65876 /* Employee.swift in Sources */,
 				283239B5273FEB1700D65876 /* TasksLIstUseCaseImplementation.swift in Sources */,
 				2832398F273FB24C00D65876 /* SceneDelegate.swift in Sources */,
+				2887C0C82749AE3F00B4E664 /* EditTaskUseCase.swift in Sources */,
 				2887C0A62749103600B4E664 /* StatusTableViewCell.swift in Sources */,
 				283239F627417CE700D65876 /* TaskStatusToStringWithColor.swift in Sources */,
 				283239D42740065800D65876 /* ViewErrorType.swift in Sources */,
@@ -617,6 +648,7 @@
 				2887C0A227490ACA00B4E664 /* TaskViewState.swift in Sources */,
 				283239B8273FECB100D65876 /* UseCasesError.swift in Sources */,
 				283239AB273FE84500D65876 /* Departament.swift in Sources */,
+				2887C0CD2749AF4900B4E664 /* EditTaskViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +804,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -801,6 +834,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
