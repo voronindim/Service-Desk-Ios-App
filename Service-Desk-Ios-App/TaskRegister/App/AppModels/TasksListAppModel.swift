@@ -25,7 +25,11 @@ final class TasksListAppModel {
     
     init(tasksListUseCase: TasksListUseCase) {
         self.tasksListUseCase = tasksListUseCase
-        stateSubject.onNext(.loaded(mockTasks1))
+        self.stateSubject.onNext(.loading)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            self.stateSubject.onNext(.loaded(mockTasks1))
+        })
+        
     }
     
     // MARK: - Public Methods

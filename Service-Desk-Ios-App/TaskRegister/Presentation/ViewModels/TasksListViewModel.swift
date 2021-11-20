@@ -16,13 +16,24 @@ final class TasksListViewModel {
         viewStateSubject
     }
     
-    private(set) var currentViewItems: [TasksListItemViewState]?
+    private(set) var currentViewItems: [TasksListItemViewState]? {
+        didSet {
+            viewStateSubject.onNext(.loaded)
+        }
+    }
     
     // MARK: - Private Properties
     
     private let appModel: TasksListAppModel
     private let disposeBag = DisposeBag()
-    private let viewStateSubject = PublishSubject<ViewState>()
+    private let viewStateSubject = BehaviorSubject<ViewState>(value: .loading)
+    
+    private var items: [TasksListItemViewState]?
+    private var filterText: String = "" {
+        didSet {
+            updateCurrentViewItems()
+        }
+    }
     
     // MARK: - Initialize
     
@@ -32,6 +43,10 @@ final class TasksListViewModel {
     }
     
     // MARK: - Public Methods
+    
+    func filterTextDidChanged(_ text: String) {
+        filterText = text
+    }
     
     func reloadTasksList() {
         appModel.reloadTasksList()
@@ -50,11 +65,21 @@ final class TasksListViewModel {
         case .loading:
             viewStateSubject.onNext(.loading)
         case .loaded(let tasks):
-            currentViewItems = tasks.map({ TasksListItemViewState(model: $0) })
-            viewStateSubject.onNext(.loaded)
+            items = tasks.map({ TasksListItemViewState(model: $0) })
+            updateCurrentViewItems()
         case .error(let useCasesError):
             let viewErrorType = ViewErrorType(useCaseError: useCasesError)
             viewStateSubject.onNext(.error(viewErrorType))
         }
+    }
+    
+    private func updateCurrentViewItems() {
+        currentViewItems = items?.filter({ item in
+            let filterTextLowercase = filterText.lowercased()
+            guard !filterText.isEmpty else { return true }
+            guard !item.title.lowercased().contains(filterTextLowercase) else { return true }
+            guard !item.creator.name.contains(filterTextLowercase) else { return true }
+            return false
+        })
     }
 }

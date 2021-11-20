@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import Lottie
 
 class TasksListViewController: UIViewController {
 
@@ -23,15 +24,20 @@ class TasksListViewController: UIViewController {
         return tableView
     }()
     
+    private let loadingAnimationView = AnimationView()
+    
     private let disposeBag = DisposeBag()
     
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         registerCells()
         setupNavigationBar()
         setup()
+        setupAnimationView()
+        setupSearchBar()
         setupRefreshControl()
         subscribeOnViewModel()
     }
@@ -39,8 +45,18 @@ class TasksListViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupNavigationBar() {
+        title = "Поручения"
         let rightNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(rightNavigationBarButtonDidTapped))
         navigationItem.rightBarButtonItem = rightNavigationBarButton
+    }
+    
+    private func setupAnimationView() {
+        loadingAnimationView.animation = Animation.named("loading-indicator")
+        loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        loadingAnimationView.center = view.center
+        loadingAnimationView.contentMode = .scaleAspectFit
+        loadingAnimationView.loopMode = .loop
+        view.addSubview(loadingAnimationView)
     }
     
     @objc private func rightNavigationBarButtonDidTapped() {
@@ -50,6 +66,7 @@ class TasksListViewController: UIViewController {
     private func setupRefreshControl() {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlHandler), for: .valueChanged)
+        tasksListTableView.refreshControl = refreshControl
     }
     
     @objc private func refreshControlHandler() {
@@ -61,6 +78,15 @@ class TasksListViewController: UIViewController {
         tasksListTableView.dataSource = self
         view.addSubview(tasksListTableView)
         setConstraints()
+        
+    }
+    
+    private func setupSearchBar() {
+        // TODO: Нужно исправить. Появился какой то лишний скролл.
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: tasksListTableView.frame.size.width, height: 44.0))
+        searchBar.delegate = self
+        searchBar.backgroundImage = UIImage()
+        tasksListTableView.tableHeaderView = searchBar
     }
     
     private func setConstraints() {
@@ -84,16 +110,40 @@ class TasksListViewController: UIViewController {
         tasksListTableView.refreshControl?.endRefreshing()
         switch state {
         case .loading:
-            break
+            startLoadingAnimationView()
+            tasksListTableView.isHidden = true
         case .loaded:
+            endRefreshing()
+            stopLoadingAnimationView()
             tasksListTableView.reloadData()
-        case .error(_):
-            break
+            tasksListTableView.isHidden = false
+        case .error(let viewErrorType):
+            stopLoadingAnimationView()
+            endRefreshing()
+            if viewModel?.currentViewItems == nil {
+                tasksListTableView.isHidden = true
+            } else {
+                InfoToast.show("\(viewErrorType)", image: UIImage(systemName: "wifi.exclamationmark"))
+            }
         }
     }
     
     func registerCells() {
         tasksListTableView.register(UINib(nibName: TasksListTableViewCell.reuseIdentidier, bundle: Bundle(for: TasksListTableViewCell.self)), forCellReuseIdentifier: TasksListTableViewCell.reuseIdentidier)
+    }
+    
+    private func startLoadingAnimationView() {
+        loadingAnimationView.isHidden = false
+        loadingAnimationView.play()
+    }
+    
+    private func stopLoadingAnimationView() {
+        loadingAnimationView.isHidden = true
+        loadingAnimationView.stop()
+    }
+    
+    private func endRefreshing() {
+        tasksListTableView.refreshControl?.endRefreshing()
     }
     
 }
@@ -125,7 +175,12 @@ extension TasksListViewController: UITableViewDataSource {
         }
         return cell
     }
-    
-    
 }
 
+// MARK: - UISearchBarDelegate
+
+extension TasksListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.filterTextDidChanged(searchText)
+    }
+}
