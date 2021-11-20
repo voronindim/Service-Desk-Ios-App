@@ -18,12 +18,6 @@ class TasksListTableViewCell: UITableViewCell {
     @IBOutlet private var statusLabel: UILabel!
     @IBOutlet private var endDateLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    
     func setViewState(_ state: TasksListItemViewState) {
         titleLabel.text = state.title
         descriptionLabel.text = state.description

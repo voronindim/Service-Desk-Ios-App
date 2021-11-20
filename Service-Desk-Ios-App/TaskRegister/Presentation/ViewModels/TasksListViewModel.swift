@@ -33,8 +33,8 @@ final class TasksListViewModel {
     
     // MARK: - Public Methods
     
-    func reloadTasksList() async {
-        await appModel.reloadTasksList()
+    func reloadTasksList() {
+        appModel.reloadTasksList()
     }
     
     // MARK: - Private Methods

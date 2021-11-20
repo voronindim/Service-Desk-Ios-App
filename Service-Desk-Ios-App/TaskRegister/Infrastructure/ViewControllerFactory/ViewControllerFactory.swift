@@ -21,9 +21,9 @@ final class ViewControllerFactory {
         return tasksListViewController
     }
     
-    func taskViewController() -> TaskViewController {
+    func taskViewController(taskId: UUID) -> TaskViewController {
         let taskViewController = TaskViewController()
-        // TODO: set view model
+        taskViewController.viewModel = viewModelFactory.taskViewModel(taskId: taskId)
         return taskViewController
     }
 }

@@ -32,6 +32,7 @@ class TasksListViewController: UIViewController {
         registerCells()
         setupNavigationBar()
         setup()
+        setupRefreshControl()
         subscribeOnViewModel()
     }
     
@@ -44,6 +45,15 @@ class TasksListViewController: UIViewController {
     
     @objc private func rightNavigationBarButtonDidTapped() {
         
+    }
+    
+    private func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlHandler), for: .valueChanged)
+    }
+    
+    @objc private func refreshControlHandler() {
+        viewModel?.reloadTasksList()
     }
     
     private func setup() {
@@ -71,6 +81,7 @@ class TasksListViewController: UIViewController {
     }
     
     private func updateViewState(_ state: ViewState) {
+        tasksListTableView.refreshControl?.endRefreshing()
         switch state {
         case .loading:
             break
@@ -92,7 +103,11 @@ class TasksListViewController: UIViewController {
 extension TasksListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        coordinator?.showTasksListViewController()
+        if let taskId = viewModel?.currentViewItems?[indexPath.row].id {
+            coordinator?.showTaskViewController(taskId: taskId)
+        } else {
+            // TODO: Показать сообщение о том, что не получилось открыть это поручение.
+        }
     }
 }
 

@@ -18,7 +18,7 @@ final class AppModelFactory {
         TasksListAppModel(tasksListUseCase: useCaseFactory.tasksListUseCase())
     }
     
-    func taskAppModel() -> TaskAppModel {
-        TaskAppModel(taskUseCase: useCaseFactory.taskUseCase())
+    func taskAppModel(taskId: UUID) -> TaskAppModel {
+        TaskAppModel(taskId: taskId, taskUseCase: useCaseFactory.taskUseCase())
     }
 }

@@ -35,8 +35,8 @@ extension Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func showTaskViewController() {
-        let viewController = viewControllerFactory.taskViewController()
+    func showTaskViewController(taskId: UUID) {
+        let viewController = viewControllerFactory.taskViewController(taskId: taskId)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }

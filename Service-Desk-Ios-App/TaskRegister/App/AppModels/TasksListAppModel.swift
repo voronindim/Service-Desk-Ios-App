@@ -25,18 +25,28 @@ final class TasksListAppModel {
     
     init(tasksListUseCase: TasksListUseCase) {
         self.tasksListUseCase = tasksListUseCase
+        stateSubject.onNext(.loaded(mockTasks1))
     }
     
     // MARK: - Public Methods
     
-    func reloadTasksList() async {
-        let result = await tasksListUseCase.reload(userId: UUID())
-        switch result {
-        case .success(let tasks):
-            stateSubject.onNext(.loaded(tasks))
-        case .failure(let useCaseError):
-            stateSubject.onNext(.error(useCaseError))
-        }
+    func reloadTasksList() {
+        stateSubject.onNext(.loaded(mockTasks1))
+//        let result = await tasksListUseCase.reload(userId: UUID())
+//        switch result {
+//        case .success(let tasks):
+//            stateSubject.onNext(.loaded(tasks))
+//        case .failure(let useCaseError):
+//            stateSubject.onNext(.error(useCaseError))
+//        }
     }
     
 }
+
+var mockTasks1: [Task] = [
+    .init(id: UUID(), title: "kjashdfkajshdf", description: "askljasdl", status: .closed, createdDate: Date(), endDate: Date(), creator: .init(id: UUID(), name: "asdlk;fjas", avatarUrl: nil), assigned: .init(id: UUID(), name: "qpowei", avatarUrl: nil), departament: .init(id: UUID(), name: "123")),
+    .init(id: UUID(), title: "kjashdfkajshdf", description: "askljasdl", status: .closed, createdDate: Date(), endDate: Date(), creator: .init(id: UUID(), name: "asdlk;fjas", avatarUrl: nil), assigned: .init(id: UUID(), name: "qpowei", avatarUrl: nil), departament: .init(id: UUID(), name: "123")),
+    .init(id: UUID(), title: "kjashdfkajshdf", description: "askljasdl", status: .closed, createdDate: Date(), endDate: Date(), creator: .init(id: UUID(), name: "asdlk;fjas", avatarUrl: nil), assigned: .init(id: UUID(), name: "qpowei", avatarUrl: nil), departament: .init(id: UUID(), name: "123")),
+    .init(id: UUID(), title: "kjashdfkajshdf", description: "askljasdl", status: .closed, createdDate: Date(), endDate: Date(), creator: .init(id: UUID(), name: "asdlk;fjas", avatarUrl: nil), assigned: .init(id: UUID(), name: "qpowei", avatarUrl: nil), departament: .init(id: UUID(), name: "123")),
+    .init(id: UUID(), title: "kjashdfkajshdf", description: "askljasdl", status: .closed, createdDate: Date(), endDate: Date(), creator: .init(id: UUID(), name: "asdlk;fjas", avatarUrl: nil), assigned: .init(id: UUID(), name: "qpowei", avatarUrl: nil), departament: .init(id: UUID(), name: "123")),
+]

@@ -18,4 +18,9 @@ final class ViewModelFactory {
         let appModel = appModelFactory.tasksListAppModel()
         return TasksListViewModel(appModel: appModel)
     }
+    
+    func taskViewModel(taskId: UUID) -> TaskViewModel {
+        let appModel = appModelFactory.taskAppModel(taskId: taskId)
+        return TaskViewModel(appModel: appModel)
+    }
 }
