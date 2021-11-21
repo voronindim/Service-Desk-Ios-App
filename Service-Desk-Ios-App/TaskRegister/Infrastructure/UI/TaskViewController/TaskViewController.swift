@@ -88,10 +88,12 @@ class TaskViewController: UIViewController {
             stopLoadingAnimationView()
             tableView.reloadData()
             tableView.isHidden = false
+            showEditButton(true)
         case .error(let viewErrorType):
             stopLoadingAnimationView()
             endRefreshing()
             if viewModel?.currentTask == nil {
+                showEditButton(false)
                 tableView.isHidden = true
             } else {
                 InfoToast.show("\(viewErrorType)", image: UIImage(systemName: "wifi.exclamationmark"))
@@ -125,6 +127,21 @@ class TaskViewController: UIViewController {
     
     private func setupNavigationBar() {
         title = "Поручение"
+        showEditButton(false)
+    }
+    
+    @objc private func rightNavigationBarButtonDidTapped() {
+        guard let task = viewModel?.task else { return }
+        coordinator?.showEditViewController(task: task)
+    }
+    
+    private func showEditButton(_ show: Bool) {
+        if show {
+            let rightNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "pencil"), style: .done, target: self, action: #selector(rightNavigationBarButtonDidTapped))
+            navigationItem.rightBarButtonItem = rightNavigationBarButton
+        } else {
+            navigationItem.rightBarButtonItem = nil
+        }
     }
     
     private func registerCells() {
@@ -185,6 +202,7 @@ class TaskViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate
 
 extension TaskViewController: UITableViewDelegate {
     
@@ -206,6 +224,8 @@ extension TaskViewController: UITableViewDelegate {
         }
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension TaskViewController: UITableViewDataSource {
     
@@ -245,8 +265,6 @@ extension TaskViewController: UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
-    // TODO: убрать после проверки
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         .leastNormalMagnitude

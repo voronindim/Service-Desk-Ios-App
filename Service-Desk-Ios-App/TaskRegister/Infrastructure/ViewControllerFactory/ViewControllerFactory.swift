@@ -26,4 +26,11 @@ final class ViewControllerFactory {
         taskViewController.viewModel = viewModelFactory.taskViewModel(taskId: taskId)
         return taskViewController
     }
+    
+    func editViewController(task: Task?) -> EditTaskViewController {
+        let editViewController = EditTaskViewController()
+        editViewController.viewModel = viewModelFactory.editTaskViewModel(editTask: task)
+        return editViewController
+    }
+    
 }

@@ -23,4 +23,9 @@ final class ViewModelFactory {
         let appModel = appModelFactory.taskAppModel(taskId: taskId)
         return TaskViewModel(appModel: appModel)
     }
+    
+    func editTaskViewModel(editTask: Task?) -> EditTaskViewModel {
+        let appModel = appModelFactory.editTaskAppModel(task: editTask)
+        return EditTaskViewModel(appModel: appModel)
+    }
 }

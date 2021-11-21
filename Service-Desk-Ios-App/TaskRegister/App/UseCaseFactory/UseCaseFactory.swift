@@ -18,4 +18,9 @@ final class UseCaseFactory {
         let useCase = TaskUseCaseImplementation()
         return useCase
     }
+    
+    func editTaskUseCase() -> EditTaskUseCase {
+        let useCase = EditTaskUseCaseImplementation()
+        return useCase
+    }
 }

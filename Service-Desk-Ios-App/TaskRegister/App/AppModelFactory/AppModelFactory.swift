@@ -9,7 +9,7 @@ import Foundation
 
 final class AppModelFactory {
     private let useCaseFactory: UseCaseFactory
-    
+    private let selfInfo: Employee = .init(id: UUID(), name: "Hardcode Dmitrii Voronin", avatarUrl: nil)
     init(useCaseFactory: UseCaseFactory) {
         self.useCaseFactory = useCaseFactory
     }
@@ -20,5 +20,9 @@ final class AppModelFactory {
     
     func taskAppModel(taskId: UUID) -> TaskAppModel {
         TaskAppModel(taskId: taskId, taskUseCase: useCaseFactory.taskUseCase())
+    }
+    
+    func editTaskAppModel(task: Task?) -> EditTaskAppModel {
+        EditTaskAppModel(editTaskUseCase: useCaseFactory.editTaskUseCase(), selfInfo: selfInfo, editTask: task)
     }
 }

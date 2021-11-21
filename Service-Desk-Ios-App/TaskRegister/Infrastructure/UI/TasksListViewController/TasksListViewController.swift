@@ -47,7 +47,7 @@ class TasksListViewController: UIViewController {
     
     private func setupNavigationBar() {
         title = "Поручения"
-        let rightNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(rightNavigationBarButtonDidTapped))
+        let rightNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(rightNavigationBarButtonDidTapped))
         navigationItem.rightBarButtonItem = rightNavigationBarButton
     }
     
@@ -61,7 +61,7 @@ class TasksListViewController: UIViewController {
     }
     
     @objc private func rightNavigationBarButtonDidTapped() {
-        
+        coordinator?.showEditViewController(task: nil)
     }
     
     private func setupRefreshControl() {

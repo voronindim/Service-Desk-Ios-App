@@ -17,12 +17,14 @@ final class TaskViewModel {
     }
     
     private(set) var currentTask: TaskViewState?
+    private(set) var task: Task?
     
     // MARK: - Private Properties
     
     private let appModel: TaskAppModel
     private let viewStateSubject = BehaviorSubject<ViewState>(value: .loaded)
     private let disposeBag = DisposeBag()
+    
     
     // MARK: - Initialize
     
@@ -58,6 +60,7 @@ final class TaskViewModel {
         case .loading:
             viewStateSubject.onNext(.loading)
         case .loaded(let task):
+            self.task = task
             currentTask = TaskViewState(model: task)
             viewStateSubject.onNext(.loaded)
         case .error(let useCasesError):

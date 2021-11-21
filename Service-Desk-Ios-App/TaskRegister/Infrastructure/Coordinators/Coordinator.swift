@@ -29,6 +29,7 @@ final class Coordinator {
 // MARK: - Show Methods
 
 extension Coordinator {
+    
     func showTasksListViewController() {
         let viewController = viewControllerFactory.tasksListViewController()
         viewController.coordinator = self
@@ -40,4 +41,11 @@ extension Coordinator {
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func showEditViewController(task: Task?) {
+        let viewController = viewControllerFactory.editViewController(task: task)
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
 }

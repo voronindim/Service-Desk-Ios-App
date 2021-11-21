@@ -61,6 +61,7 @@
 		2887C0CB2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0CA2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift */; };
 		2887C0CD2749AF4900B4E664 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0CC2749AF4900B4E664 /* EditTaskViewModel.swift */; };
 		2887C0CF2749B12600B4E664 /* EditTaskViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0CE2749B12600B4E664 /* EditTaskViewState.swift */; };
+		2887C0D2274AA94800B4E664 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0D1274AA94800B4E664 /* EditTaskViewController.swift */; };
 		75283CBB6357DBE369F32A67 /* Pods_Service_Desk_Ios_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		2887C0CA2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskUseCaseImplementation.swift; sourceTree = "<group>"; };
 		2887C0CC2749AF4900B4E664 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
 		2887C0CE2749B12600B4E664 /* EditTaskViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewState.swift; sourceTree = "<group>"; };
+		2887C0D1274AA94800B4E664 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Service_Desk_Ios_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		851D445C0F11E4C70BAF16BF /* Pods-Service-Desk-Ios-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.release.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.release.xcconfig"; sourceTree = "<group>"; };
 		CDBB9B1D2DA4341FBB4F3440 /* Pods-Service-Desk-Ios-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.debug.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		283239D62741386D00D65876 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2887C0D0274AA93200B4E664 /* EditTaskViewController */,
 				283239ED274176B800D65876 /* TaskViewController */,
 				283239EB274174FE00D65876 /* TasksListViewController */,
 			);
@@ -464,6 +467,14 @@
 				2887C0CA2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift */,
 			);
 			path = EditTaskUseCase;
+			sourceTree = "<group>";
+		};
+		2887C0D0274AA93200B4E664 /* EditTaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2887C0D1274AA94800B4E664 /* EditTaskViewController.swift */,
+			);
+			path = EditTaskViewController;
 			sourceTree = "<group>";
 		};
 		6AD2689663FFC942FF09C8B7 /* Pods */ = {
@@ -649,6 +660,7 @@
 				283239B8273FECB100D65876 /* UseCasesError.swift in Sources */,
 				283239AB273FE84500D65876 /* Departament.swift in Sources */,
 				2887C0CD2749AF4900B4E664 /* EditTaskViewModel.swift in Sources */,
+				2887C0D2274AA94800B4E664 /* EditTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
