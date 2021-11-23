@@ -28,7 +28,7 @@ final class ViewControllerFactory {
     }
     
     func editViewController(task: Task?) -> EditTaskViewController {
-        let editViewController = EditTaskViewController()
+        let editViewController = EditTaskViewController.instantiateFromStoryboard()!
         editViewController.viewModel = viewModelFactory.editTaskViewModel(editTask: task)
         return editViewController
     }

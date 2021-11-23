@@ -41,6 +41,8 @@
 		283239F32741788800D65876 /* TasksListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 283239F12741788800D65876 /* TasksListTableViewCell.xib */; };
 		283239F627417CE700D65876 /* TaskStatusToStringWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239F527417CE700D65876 /* TaskStatusToStringWithColor.swift */; };
 		283239F927417E6B00D65876 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283239F827417E6B00D65876 /* DateExtensions.swift */; };
+		2847F1EF274CF4BD00C4A9B8 /* EditTaskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2847F1EE274CF4BD00C4A9B8 /* EditTaskViewController.storyboard */; };
+		2847F1F1274D000F00C4A9B8 /* InstantiateFromStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847F1F0274D000F00C4A9B8 /* InstantiateFromStoryboard.swift */; };
 		2887C09E274908C000B4E664 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C09D274908C000B4E664 /* TaskViewModel.swift */; };
 		2887C0A227490ACA00B4E664 /* TaskViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0A127490ACA00B4E664 /* TaskViewState.swift */; };
 		2887C0A62749103600B4E664 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0A42749103600B4E664 /* StatusTableViewCell.swift */; };
@@ -102,6 +104,8 @@
 		283239F12741788800D65876 /* TasksListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksListTableViewCell.xib; sourceTree = "<group>"; };
 		283239F527417CE700D65876 /* TaskStatusToStringWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusToStringWithColor.swift; sourceTree = "<group>"; };
 		283239F827417E6B00D65876 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		2847F1EE274CF4BD00C4A9B8 /* EditTaskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTaskViewController.storyboard; sourceTree = "<group>"; };
+		2847F1F0274D000F00C4A9B8 /* InstantiateFromStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiateFromStoryboard.swift; sourceTree = "<group>"; };
 		2887C09D274908C000B4E664 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		2887C0A127490ACA00B4E664 /* TaskViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewState.swift; sourceTree = "<group>"; };
 		2887C0A42749103600B4E664 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
@@ -308,6 +312,7 @@
 				2887C0D0274AA93200B4E664 /* EditTaskViewController */,
 				283239ED274176B800D65876 /* TaskViewController */,
 				283239EB274174FE00D65876 /* TasksListViewController */,
+				2847F1F0274D000F00C4A9B8 /* InstantiateFromStoryboard.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				2887C0D1274AA94800B4E664 /* EditTaskViewController.swift */,
+				2847F1EE274CF4BD00C4A9B8 /* EditTaskViewController.storyboard */,
 			);
 			path = EditTaskViewController;
 			sourceTree = "<group>";
@@ -556,6 +562,7 @@
 			files = (
 				2887C0AD2749115C00B4E664 /* TitleAndEndDateTableViewCell.xib in Resources */,
 				283239F32741788800D65876 /* TasksListTableViewCell.xib in Resources */,
+				2847F1EF274CF4BD00C4A9B8 /* EditTaskViewController.storyboard in Resources */,
 				2887C0A72749103600B4E664 /* StatusTableViewCell.xib in Resources */,
 				28323999273FB24E00D65876 /* LaunchScreen.storyboard in Resources */,
 				2887C0B7274914B600B4E664 /* DescriptionTableViewCell.xib in Resources */,
@@ -653,6 +660,7 @@
 				2887C0BC2749491700B4E664 /* ChangeStatusUseCaseImplementation.swift in Sources */,
 				283239DF27416FCD00D65876 /* ViewControllerFactory.swift in Sources */,
 				283239E3274170C500D65876 /* AppModelFactory.swift in Sources */,
+				2847F1F1274D000F00C4A9B8 /* InstantiateFromStoryboard.swift in Sources */,
 				283239BA273FF6CE00D65876 /* TasksListAppState.swift in Sources */,
 				283239C0273FFB1700D65876 /* TaskUseCaseImplmplementation.swift in Sources */,
 				283239BE273FFB0600D65876 /* TaskUseCase.swift in Sources */,

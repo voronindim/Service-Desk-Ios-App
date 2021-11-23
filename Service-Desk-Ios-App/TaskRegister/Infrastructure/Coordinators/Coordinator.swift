@@ -44,8 +44,10 @@ extension Coordinator {
     
     func showEditViewController(task: Task?) {
         let viewController = viewControllerFactory.editViewController(task: task)
-        viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: true)
+        viewController.closeHandler = { self.navigationController.dismiss(animated: true) }
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.modalPresentationStyle = .fullScreen
+        navigationController.present(navController, animated: true)
     }
     
 }

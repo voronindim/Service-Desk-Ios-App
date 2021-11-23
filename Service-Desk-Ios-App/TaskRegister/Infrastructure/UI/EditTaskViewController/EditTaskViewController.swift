@@ -9,21 +9,27 @@ import UIKit
 import RxSwift
 
 class EditTaskViewController: UIViewController {
-
+    
+    // MARK: - @IBOutlet
+    
+    @IBOutlet var taskTitleLabel: UILabel!
+    @IBOutlet var taskTitleInputField: UITextField!
+    @IBOutlet var assignedTitleLabel: UILabel!
+    @IBOutlet var assignedStaskView: UIStackView!
+    @IBOutlet var assignedUserAvatarImageView: UIImageView!
+    @IBOutlet var assignedUserNameLabel: UILabel!
+    @IBOutlet var endDateLabel: UILabel!
+    @IBOutlet var endDateInputField: UITextField!
+    @IBOutlet var decsriptionTitleLabel: UILabel!
+    @IBOutlet var descriptionTextView: UITextView!
+    
+    
     // MARK: - Public Properties
     
-    var coordinator: Coordinator?
     var viewModel: EditTaskViewModel?
+    var closeHandler: (() -> Void)?
     
     // MARK: - Private Properties
-    
-    private let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
-        tableView.sectionHeaderTopPadding = 8
-        return tableView
-    }()
     
     private let disposeBag = DisposeBag()
     
@@ -34,30 +40,19 @@ class EditTaskViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupNavigationBar()
         subscribeOnViewModel()
+        setupViewData()
     }
     
     // MARK: - Private Methods
     
     private func setupNavigationBar() {
         title = "Редактирование"
+        let leftNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"), style: .done, target: self, action: #selector(leftNavigationBarButtonDidTapped))
+        navigationItem.leftBarButtonItem = leftNavigationBarButton
     }
     
-    private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        view.addSubview(tableView)
-        setConstraints()
-    }
-    
-    private func setConstraints() {
-        var constraints = [NSLayoutConstraint]()
-        
-        constraints.append(tableView.topAnchor.constraint(equalTo: view.topAnchor))
-        constraints.append(tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
-        constraints.append(tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor))
-        constraints.append(tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor))
-        
-        NSLayoutConstraint.activate(constraints)
+    @objc private func leftNavigationBarButtonDidTapped() {
+        closeHandler?()
     }
     
     private func subscribeOnViewModel() {
@@ -76,22 +71,21 @@ class EditTaskViewController: UIViewController {
             break
         }
     }
-}
-
-// MARK: - UITableViewDelegate
-
-extension EditTaskViewController: UITableViewDelegate {
+    
+    private func setupViewData() {
+        guard let viewModel = viewModel else { return }
+        guard let task = viewModel.currentTask else { return }
+        taskTitleInputField.text = task.title
+        assignedUserNameLabel.text = task.assigned?.name
+        descriptionTextView.text = task.description
+    }
+    
     
 }
 
-// MARK: - UITableViewDataSource
 
-extension EditTaskViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
-    }
+// MARK: - InstntiateFromStoryboard
+
+extension EditTaskViewController: InstantiateFromStoryboard {
+    static let storyboardName = "EditTaskViewController"
 }
