@@ -16,12 +16,19 @@ final class EditTaskViewModel {
         viewStateSubject
     }
     
+    var disableApplyButton: Observable<Bool> {
+        disableApplyButtonSubject
+    }
+    
+    var mode: EditTaskViewMode?
+    
     private(set) var currentTask: EditTaskViewState?
     
     // MARK: - Private Properties
     
     private let appModel: EditTaskAppModel
     private let viewStateSubject = BehaviorSubject<ViewState>(value: .loading)
+    private let disableApplyButtonSubject = BehaviorSubject<Bool>(value: false)
     private let disposeBag = DisposeBag()
     
     // MARK: - Initialize
@@ -33,29 +40,18 @@ final class EditTaskViewModel {
     
     // MARK: - Public Methods
     
-    func titleDidChanged(_ title: String) {
-        currentTask?.title = title
-        viewStateSubject.onNext(.loaded)
+    func applyChanges() {
+        guard let currentTask = currentTask else { return }
+        let editTaskModel = EditTaskModel(currentTask)
+        appModel.applyTask(editTaskModel)
     }
     
     func descriptionDidChanged(_ text: String) {
         currentTask?.description = text
-        viewStateSubject.onNext(.loaded)
     }
     
-    func endDateDidChanged(_ date: Date) {
-        currentTask?.endDate = date
-        viewStateSubject.onNext(.loaded)
-    }
-    
-    func assignedDidChanged(_ assigned: Employee) {
-        currentTask?.assigned = assigned
-        viewStateSubject.onNext(.loaded)
-    }
-    
-    func departamentDidChanged(_ departament: Departament) {
-        currentTask?.departament = departament
-        viewStateSubject.onNext(.loaded)
+    func titleDidChanged(_ text: String) {
+        currentTask?.title = text
     }
     
     // MARK: - Private Methods
@@ -70,9 +66,25 @@ final class EditTaskViewModel {
         switch state {
         case .edit(let task):
             currentTask = EditTaskViewState(model: task)
+            mode = .edit
         case .create(let selfInfo):
             currentTask = EditTaskViewState(creator: selfInfo)
+            mode = .create
         }
     }
     
+}
+
+fileprivate extension EditTaskModel {
+    init(_ model: EditTaskViewState) {
+        self.init(
+            id: model.id,
+            title: model.title,
+            description: model.description,
+            endDate: model.endDate,
+            creator: model.creator,
+            assigned: model.assigned,
+            departament: model.departament
+        )
+    }
 }

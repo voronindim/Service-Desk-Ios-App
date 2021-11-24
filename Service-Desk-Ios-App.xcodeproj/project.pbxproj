@@ -64,6 +64,8 @@
 		2887C0CD2749AF4900B4E664 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0CC2749AF4900B4E664 /* EditTaskViewModel.swift */; };
 		2887C0CF2749B12600B4E664 /* EditTaskViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0CE2749B12600B4E664 /* EditTaskViewState.swift */; };
 		2887C0D2274AA94800B4E664 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887C0D1274AA94800B4E664 /* EditTaskViewController.swift */; };
+		28D947FC274EB42000DA72A0 /* EditTaslViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D947FB274EB42000DA72A0 /* EditTaslViewMode.swift */; };
+		28D947FE274EB6E500DA72A0 /* EditTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D947FD274EB6E500DA72A0 /* EditTaskModel.swift */; };
 		75283CBB6357DBE369F32A67 /* Pods_Service_Desk_Ios_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,8 @@
 		2887C0CC2749AF4900B4E664 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
 		2887C0CE2749B12600B4E664 /* EditTaskViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewState.swift; sourceTree = "<group>"; };
 		2887C0D1274AA94800B4E664 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
+		28D947FB274EB42000DA72A0 /* EditTaslViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaslViewMode.swift; sourceTree = "<group>"; };
+		28D947FD274EB6E500DA72A0 /* EditTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskModel.swift; sourceTree = "<group>"; };
 		3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Service_Desk_Ios_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		851D445C0F11E4C70BAF16BF /* Pods-Service-Desk-Ios-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.release.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.release.xcconfig"; sourceTree = "<group>"; };
 		CDBB9B1D2DA4341FBB4F3440 /* Pods-Service-Desk-Ios-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.debug.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				283239A3273FE74D00D65876 /* Task.swift */,
+				28D947FD274EB6E500DA72A0 /* EditTaskModel.swift */,
 				283239A8273FE7FC00D65876 /* Employee.swift */,
 				283239AA273FE84500D65876 /* Departament.swift */,
 				283239AC273FE87100D65876 /* TaskStatus.swift */,
@@ -292,6 +297,7 @@
 				283239CB2740009500D65876 /* TasksListViewModel.swift */,
 				2887C09D274908C000B4E664 /* TaskViewModel.swift */,
 				2887C0CC2749AF4900B4E664 /* EditTaskViewModel.swift */,
+				28D947FB274EB42000DA72A0 /* EditTaslViewMode.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -633,6 +639,7 @@
 				283239DD27413EAB00D65876 /* Coordinator.swift in Sources */,
 				283239F22741788800D65876 /* TasksListTableViewCell.swift in Sources */,
 				2887C0CB2749AE6400B4E664 /* EditTaskUseCaseImplementation.swift in Sources */,
+				28D947FC274EB42000DA72A0 /* EditTaslViewMode.swift in Sources */,
 				2887C0B12749129700B4E664 /* UserTableTableViewCell.swift in Sources */,
 				283239EF274176C900D65876 /* TaskViewController.swift in Sources */,
 				2887C0BA274948D200B4E664 /* ChangeStatusUseCase.swift in Sources */,
@@ -643,6 +650,7 @@
 				283239F927417E6B00D65876 /* DateExtensions.swift in Sources */,
 				2887C0AC2749115C00B4E664 /* TitleAndEndDateTableViewCell.swift in Sources */,
 				2832398D273FB24C00D65876 /* AppDelegate.swift in Sources */,
+				28D947FE274EB6E500DA72A0 /* EditTaskModel.swift in Sources */,
 				283239CC2740009500D65876 /* TasksListViewModel.swift in Sources */,
 				2887C0B6274914B600B4E664 /* DescriptionTableViewCell.swift in Sources */,
 				283239AD273FE87100D65876 /* TaskStatus.swift in Sources */,

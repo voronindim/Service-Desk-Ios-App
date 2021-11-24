@@ -38,6 +38,10 @@ class EditTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+        taskTitleInputField.delegate = self
+        descriptionTextView.delegate = self
+        
         setupNavigationBar()
         subscribeOnViewModel()
         setupViewData()
@@ -46,18 +50,39 @@ class EditTaskViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupNavigationBar() {
-        title = "Редактирование"
-        let leftNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"), style: .done, target: self, action: #selector(leftNavigationBarButtonDidTapped))
+        title = viewModel?.mode == .edit ? "Редактирование" : "Создание"
+        
+        let leftNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"), style: .plain, target: self, action: #selector(leftNavigationBarButtonDidTapped))
         navigationItem.leftBarButtonItem = leftNavigationBarButton
     }
+    
+    private func setupApplyButton(_ disable: Bool) {
+        let image = disable ?
+            UIImage(systemName: "arrowshape.turn.up.forward.circle.fill") :
+            UIImage(systemName: "arrowshape.turn.up.forward.circle")
+        
+        let rightNavigationvBarButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(rightNavigationBarButtonDidTapped))
+        rightNavigationvBarButton.isEnabled = !disable
+        navigationItem.rightBarButtonItem = rightNavigationvBarButton
+    }
+    
     
     @objc private func leftNavigationBarButtonDidTapped() {
         closeHandler?()
     }
     
+    @objc private func rightNavigationBarButtonDidTapped() {
+        viewModel?.applyChanges()
+        closeHandler?()
+    }
+    
     private func subscribeOnViewModel() {
-        self.viewModel?.viewState.subscribe(onNext: { [weak self] state in
+        viewModel?.viewState.subscribe(onNext: { [weak self] state in
             self?.updateView(state)
+        }).disposed(by: disposeBag)
+        
+        viewModel?.disableApplyButton.subscribe(onNext: { [weak self] isDisable in
+            self?.setupApplyButton(isDisable)
         }).disposed(by: disposeBag)
     }
     
@@ -80,7 +105,35 @@ class EditTaskViewController: UIViewController {
         descriptionTextView.text = task.description
     }
     
+}
+
+// MARK: - UITextFieldDelegate
+
+extension EditTaskViewController: UITextFieldDelegate {
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case taskTitleInputField:
+            viewModel?.titleDidChanged(textField.text ?? "")
+        case endDateInputField:
+            break
+        default:
+            assertionFailure("изменение поля без делегата")
+            return
+        }
+    }
+}
+
+// MARK: - UITextViewDelegate
+
+extension EditTaskViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        viewModel?.descriptionDidChanged(textView.text)
+    }
 }
 
 

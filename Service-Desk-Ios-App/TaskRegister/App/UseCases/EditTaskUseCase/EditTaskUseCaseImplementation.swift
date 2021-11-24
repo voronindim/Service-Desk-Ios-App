@@ -8,7 +8,7 @@
 import Foundation
 
 final class EditTaskUseCaseImplementation: EditTaskUseCase {
-    func editTask(_ task: Task) async -> Result<Void, UseCasesError> {
+    func editTask(_ task: EditTaskModel) async -> Result<Void, UseCasesError> {
         .failure(.unknownError)
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol EditTaskUseCase {
-    func editTask(_ task: Task) async -> Result<Void, UseCasesError>
+    func editTask(_ task: EditTaskModel) async -> Result<Void, UseCasesError>
 }
