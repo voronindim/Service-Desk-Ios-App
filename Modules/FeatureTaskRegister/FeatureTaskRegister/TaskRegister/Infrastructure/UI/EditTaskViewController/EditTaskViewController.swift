@@ -84,6 +84,7 @@ class EditTaskViewController: UIViewController {
     private func setupEndDatePicker() {
         endDatePicker.datePickerMode = .date
         endDatePicker.preferredDatePickerStyle = .compact
+        endDatePicker.minimumDate = Date()
     }
     
     @objc private func leftNavigationBarButtonDidTapped() {

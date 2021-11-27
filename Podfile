@@ -28,6 +28,11 @@ target 'FeatureTaskRegister' do
   feature_task_register
 end
 
+target 'FeatureEmployeesRegister' do
+  project 'Modules/FeatureEmployeesRegister/FeatureEmployeesRegister.xcodeproj'
+  feature_task_register
+end
+
 target 'Service-Desk-Ios-App' do
   project 'Service-Desk-Ios-App.xcodeproj'
 

@@ -62,7 +62,7 @@
 		28AE89D9275237BD00FCFDE7 /* EditTaskViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE89A2275237BC00FCFDE7 /* EditTaskViewState.swift */; };
 		28AE89DA275237BD00FCFDE7 /* TaskViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE89A3275237BC00FCFDE7 /* TaskViewState.swift */; };
 		28AE89DB275237BD00FCFDE7 /* loading-indicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 28AE89A5275237BC00FCFDE7 /* loading-indicator.json */; };
-		28AE89DE2752381A00FCFDE7 /* FeatureTaskModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE89DD2752381A00FCFDE7 /* FeatureTaskModule.swift */; };
+		28AE89DE2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE89DD2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift */; };
 		F2D77187D915C4E011642F46 /* Pods_FeatureTaskRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F772F69886E9FBB60903459 /* Pods_FeatureTaskRegister.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,7 +123,7 @@
 		28AE89A2275237BC00FCFDE7 /* EditTaskViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskViewState.swift; sourceTree = "<group>"; };
 		28AE89A3275237BC00FCFDE7 /* TaskViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewState.swift; sourceTree = "<group>"; };
 		28AE89A5275237BC00FCFDE7 /* loading-indicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-indicator.json"; sourceTree = "<group>"; };
-		28AE89DD2752381A00FCFDE7 /* FeatureTaskModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTaskModule.swift; sourceTree = "<group>"; };
+		28AE89DD2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTaskRegisterModule.swift; sourceTree = "<group>"; };
 		2A88FF42CFCBAC7213D4BE75 /* Pods-FeatureTaskRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeatureTaskRegister.debug.xcconfig"; path = "Target Support Files/Pods-FeatureTaskRegister/Pods-FeatureTaskRegister.debug.xcconfig"; sourceTree = "<group>"; };
 		8F772F69886E9FBB60903459 /* Pods_FeatureTaskRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FeatureTaskRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD31C4B48311B1709B5BE273 /* Pods-FeatureTaskRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeatureTaskRegister.release.xcconfig"; path = "Target Support Files/Pods-FeatureTaskRegister/Pods-FeatureTaskRegister.release.xcconfig"; sourceTree = "<group>"; };
@@ -481,7 +481,7 @@
 		28AE89DC2752380800FCFDE7 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				28AE89DD2752381A00FCFDE7 /* FeatureTaskModule.swift */,
+				28AE89DD2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -661,7 +661,7 @@
 				28AE89B7275237BD00FCFDE7 /* InstantiateFromStoryboard.swift in Sources */,
 				28AE89D1275237BD00FCFDE7 /* EditTaskViewModel.swift in Sources */,
 				28AE89C7275237BD00FCFDE7 /* InfoToast.swift in Sources */,
-				28AE89DE2752381A00FCFDE7 /* FeatureTaskModule.swift in Sources */,
+				28AE89DE2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift in Sources */,
 				28AE89AC275237BD00FCFDE7 /* TasksListAppModel.swift in Sources */,
 				28AE89CE275237BD00FCFDE7 /* Task.swift in Sources */,
 				28AE89B2275237BD00FCFDE7 /* TaskUseCaseImplmplementation.swift in Sources */,

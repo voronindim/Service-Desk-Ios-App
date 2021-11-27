@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let tasksNavigationController = UINavigationController()
-        let tasksModule = FeatureTaskModule(navigationController: tasksNavigationController)
+        let tasksModule = FeatureTaskRegisterModule(navigationController: tasksNavigationController)
         
         let tabBarController = UITabBarController()
         tabBarController.setViewControllers([tasksNavigationController], animated: true)

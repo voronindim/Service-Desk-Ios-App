@@ -1,5 +1,5 @@
 //
-//  FeatureTaskModule.swift
+//  FeatureTaskRegisterModule.swift
 //  FeatureTaskRegister
 //
 //  Created by Dmitrii Voronin on 27.11.2021.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public final class FeatureTaskModule {
+public final class FeatureTaskRegisterModule {
     private let coordinator: Coordinator
     
     public init(navigationController: UINavigationController) {
