@@ -27,7 +27,7 @@ final class TaskAppModel {
     init(taskId: UUID, taskUseCase: TaskUseCase) {
         self.taskId = taskId
         self.taskUseCase = taskUseCase
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
             let random = Int.random(in: 0...4)
             self.stateSubject.onNext(.loaded(random <= 2 ? mock : mock2))
         }
@@ -36,7 +36,7 @@ final class TaskAppModel {
     // MARK: - Public Properties
     
     func reloadDetails() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             let random = Int.random(in: 0...4)
             self.stateSubject.onNext(.loaded(random <= 2 ? mock : mock2))
 //            self.stateSubject.onNext(.error(.unknownError))

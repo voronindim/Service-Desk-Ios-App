@@ -32,8 +32,8 @@ final class EditTaskAppModel {
         }
     }
     
-    func applyTask(_ mode: EditTaskModel) {
-        
+    func applyTask(_ model: EditTaskModel) {
+        print(model)
     }
     
 }

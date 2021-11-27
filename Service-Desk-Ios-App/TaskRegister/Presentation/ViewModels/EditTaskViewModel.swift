@@ -38,6 +38,7 @@ final class EditTaskViewModel {
         subscribeOnAppModel()
     }
     
+    
     // MARK: - Public Methods
     
     func applyChanges() {
@@ -46,12 +47,16 @@ final class EditTaskViewModel {
         appModel.applyTask(editTaskModel)
     }
     
-    func descriptionDidChanged(_ text: String) {
-        currentTask?.description = text
-    }
-    
     func titleDidChanged(_ text: String) {
         currentTask?.title = text
+    }
+
+    func endDateDidChaged(_ date: Date) {
+        currentTask?.endDate = date
+    }
+    
+    func descriptionDidChanged(_ text: String) {
+        currentTask?.description = text
     }
     
     // MARK: - Private Methods
