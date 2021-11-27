@@ -15,6 +15,8 @@
 		28323999273FB24E00D65876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28323997273FB24E00D65876 /* LaunchScreen.storyboard */; };
 		28AE8778275236D600FCFDE7 /* FeatureTaskRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AE8777275236D600FCFDE7 /* FeatureTaskRegister.framework */; };
 		28AE8779275236D600FCFDE7 /* FeatureTaskRegister.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28AE8777275236D600FCFDE7 /* FeatureTaskRegister.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		28AE8A1727524D0600FCFDE7 /* FeatureEmployeesRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AE8A1627524D0600FCFDE7 /* FeatureEmployeesRegister.framework */; };
+		28AE8A1827524D0600FCFDE7 /* FeatureEmployeesRegister.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28AE8A1627524D0600FCFDE7 /* FeatureEmployeesRegister.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75283CBB6357DBE369F32A67 /* Pods_Service_Desk_Ios_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				28AE8A1827524D0600FCFDE7 /* FeatureEmployeesRegister.framework in Embed Frameworks */,
 				28AE8779275236D600FCFDE7 /* FeatureTaskRegister.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -42,6 +45,7 @@
 		28323998273FB24E00D65876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2832399A273FB24E00D65876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28AE8777275236D600FCFDE7 /* FeatureTaskRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureTaskRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28AE8A1627524D0600FCFDE7 /* FeatureEmployeesRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureEmployeesRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Service_Desk_Ios_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		851D445C0F11E4C70BAF16BF /* Pods-Service-Desk-Ios-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.release.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.release.xcconfig"; sourceTree = "<group>"; };
 		CDBB9B1D2DA4341FBB4F3440 /* Pods-Service-Desk-Ios-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service-Desk-Ios-App.debug.xcconfig"; path = "Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			files = (
 				75283CBB6357DBE369F32A67 /* Pods_Service_Desk_Ios_App.framework in Frameworks */,
 				28AE8778275236D600FCFDE7 /* FeatureTaskRegister.framework in Frameworks */,
+				28AE8A1727524D0600FCFDE7 /* FeatureEmployeesRegister.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +109,7 @@
 		9FE3DC4DE0C88B415CFA52FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28AE8A1627524D0600FCFDE7 /* FeatureEmployeesRegister.framework */,
 				28AE8777275236D600FCFDE7 /* FeatureTaskRegister.framework */,
 				3D1DDB16F061C569C90036A5 /* Pods_Service_Desk_Ios_App.framework */,
 			);
@@ -121,7 +127,6 @@
 				28323985273FB24C00D65876 /* Sources */,
 				28323986273FB24C00D65876 /* Frameworks */,
 				28323987273FB24C00D65876 /* Resources */,
-				F58CA7B0DB25F102F6DAA1FA /* [CP] Embed Pods Frameworks */,
 				28AE877A275236D700FCFDE7 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -200,23 +205,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F58CA7B0DB25F102F6DAA1FA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

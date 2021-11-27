@@ -23,6 +23,12 @@ def feature_task_register
   toast_pods
 end
 
+def feature_employees_register
+  rx_pods
+  lottie_pods
+  toast_pods
+end
+
 target 'FeatureTaskRegister' do
   project 'Modules/FeatureTaskRegister/FeatureTaskRegister.xcodeproj'
   feature_task_register
@@ -30,7 +36,7 @@ end
 
 target 'FeatureEmployeesRegister' do
   project 'Modules/FeatureEmployeesRegister/FeatureEmployeesRegister.xcodeproj'
-  feature_task_register
+  feature_employees_register
 end
 
 target 'Service-Desk-Ios-App' do
@@ -38,8 +44,4 @@ target 'Service-Desk-Ios-App' do
 
   use_frameworks!
   
-  feature_task_register
-  
-  # Pods for Service-Desk-Ios-App
-
 end
