@@ -46,7 +46,6 @@ class TasksListViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupNavigationBar() {
-        title = "Поручения"
         let rightNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(rightNavigationBarButtonDidTapped))
         navigationItem.rightBarButtonItem = rightNavigationBarButton
     }

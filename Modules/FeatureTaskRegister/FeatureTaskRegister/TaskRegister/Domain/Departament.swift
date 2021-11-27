@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Departament {
+struct Departament: Equatable {
     let id: UUID
     let name: String
 }

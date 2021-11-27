@@ -23,8 +23,9 @@ final class EditTaskViewModel {
     // MARK: - Private Properties
     
     private let appModel: EditTaskAppModel
-    private let disableApplyButtonSubject = BehaviorSubject<Bool>(value: false)
+    private let disableApplyButtonSubject = BehaviorSubject<Bool>(value: true)
     private let disposeBag = DisposeBag()
+    private var startTaskValues: EditTaskViewState?
     
     // MARK: - Initialize
     
@@ -40,18 +41,22 @@ final class EditTaskViewModel {
         guard let currentTask = currentTask else { return }
         let editTaskModel = EditTaskModel(currentTask)
         appModel.applyTask(editTaskModel)
+        updateApplyButton()
     }
     
     func titleDidChanged(_ text: String) {
         currentTask?.title = text
+        updateApplyButton()
     }
 
     func endDateDidChaged(_ date: Date) {
         currentTask?.endDate = date
+        updateApplyButton()
     }
     
     func descriptionDidChanged(_ text: String) {
         currentTask?.description = text
+        updateApplyButton()
     }
     
     func assignedDidChanged(_ selectionItem: SelectionItem) {
@@ -64,6 +69,7 @@ final class EditTaskViewModel {
             guard let employee = array.first else { return }
             currentTask?.assigned = employee
         }
+        updateApplyButton()
     }
     
     // MARK: - Private Methods
@@ -77,12 +83,18 @@ final class EditTaskViewModel {
     private func updateViewState(_ state: EditTaskState) {
         switch state {
         case .edit(let task):
-            currentTask = EditTaskViewState(model: task)
+            let editTaskViewState = EditTaskViewState(model: task)
+            currentTask = editTaskViewState
+            startTaskValues = editTaskViewState
             mode = .edit
         case .create(let selfInfo):
             currentTask = EditTaskViewState(creator: selfInfo)
             mode = .create
         }
+    }
+    
+    private func updateApplyButton() {
+        disableApplyButtonSubject.onNext(startTaskValues == currentTask)
     }
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Employee {
+struct Employee: Equatable {
     let id: UUID
     let name: String
     let avatarUrl: URL?

@@ -126,7 +126,6 @@ class TaskViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        title = "Поручение"
         showEditButton(false)
     }
     
@@ -207,7 +206,7 @@ class TaskViewController: UIViewController {
 extension TaskViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        indexPath.section == 0 || indexPath.section == 3 ? indexPath : nil
+        indexPath.section == 0 ? indexPath : nil
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -215,9 +214,6 @@ extension TaskViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             showAlertWithTaskStates()
-        case 3:
-            // TODO: окткрыть экран с выбором человека
-            break
         default:
             assertionFailure("Пользователь выбрал ячейку, которая не кликабельная, нужно убрать возможность выделения")
             return

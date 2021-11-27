@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EditTaskViewState {
+struct EditTaskViewState: Equatable {
     let id: UUID?
     var title: String
     var description: String

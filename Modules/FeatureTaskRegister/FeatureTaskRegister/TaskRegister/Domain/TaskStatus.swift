@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TaskStatus {
+enum TaskStatus: Equatable {
     case notStarted
     case inProgress
     case review
