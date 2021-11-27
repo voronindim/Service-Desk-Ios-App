@@ -9,8 +9,12 @@ import Foundation
 import UIKit
 
 final class Coordinator {
+    
+    var selectionHandler: ((UINavigationController, @escaping (SelectionItem) -> Void) -> Void)?
+    
     private let viewControllerFactory: ViewControllerFactory
     private var navigationController: UINavigationController
+    
     
     init(navigationController: UINavigationController, viewControllerFactory: ViewControllerFactory) {
         self.navigationController = navigationController
@@ -45,6 +49,7 @@ extension Coordinator {
     func showEditViewController(task: Task?) {
         let viewController = viewControllerFactory.editViewController(task: task)
         viewController.closeHandler = { self.navigationController.dismiss(animated: true) }
+        viewController.selectAssignedHandler = selectionHandler
         let navController = UINavigationController(rootViewController: viewController)
         navController.modalPresentationStyle = .fullScreen
         navigationController.present(navController, animated: true)

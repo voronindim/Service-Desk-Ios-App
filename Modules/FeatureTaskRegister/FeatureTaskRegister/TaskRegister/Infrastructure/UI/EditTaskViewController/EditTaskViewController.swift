@@ -31,7 +31,8 @@ class EditTaskViewController: UIViewController {
     
     var viewModel: EditTaskViewModel?
     var closeHandler: (() -> Void)?
-    
+    var selectAssignedHandler: ((UINavigationController, @escaping (SelectionItem) -> Void) -> Void)?
+
     // MARK: - Private Properties
     
     private let disposeBag = DisposeBag()
@@ -41,6 +42,7 @@ class EditTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        assignedStaskView.layer.cornerRadius = 10
         
         descriptionTextViewAddContentInsets()
         addActionOnTextField()
@@ -102,7 +104,12 @@ class EditTaskViewController: UIViewController {
     }
     
     @objc private func assignedUserDidTapped() {
-        navigationController?.pushViewController(UIViewController(), animated: true)
+        guard let navigationController = navigationController else { return }
+        selectAssignedHandler?(navigationController) { [weak self] selectionItem in
+            self?.viewModel?.assignedDidChanged(selectionItem)
+            self?.setupViewData()
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     private func addActionOnTextField() {
@@ -122,10 +129,6 @@ class EditTaskViewController: UIViewController {
     }
     
     private func subscribeOnViewModel() {
-        viewModel?.viewState.subscribe(onNext: { [weak self] state in
-            self?.updateView(state)
-        }).disposed(by: disposeBag)
-        
         viewModel?.disableApplyButton.subscribe(onNext: { [weak self] isDisable in
             self?.setupApplyButton(isDisable)
         }).disposed(by: disposeBag)
@@ -135,23 +138,30 @@ class EditTaskViewController: UIViewController {
         descriptionTextView.textContainerInset = UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 16)
     }
     
-    private func updateView(_ state: ViewState) {
-        switch state {
-        case .loading:
-            break
-        case .loaded:
-            break
-        case .error(_):
-            break
-        }
-    }
-    
     private func setupViewData() {
         guard let viewModel = viewModel else { return }
         guard let task = viewModel.currentTask else { return }
         taskTitleInputField.text = task.title
-        assignedUserNameLabel.text = task.assigned?.name
+        
+        if let assigned = task.assigned {
+            showAssignedPlaceholder(false)
+            assignedUserNameLabel.text = assigned.name
+            assignedUserAvatarImageView.image = UIImage(systemName: "person.fill")
+        } else if let departament = task.departament {
+            showAssignedPlaceholder(false)
+            assignedUserNameLabel.text = departament.name
+            assignedUserAvatarImageView.image = UIImage(systemName: "person.3.fill")
+        } else {
+            showAssignedPlaceholder(true)
+        }
+        
         descriptionTextView.text = task.description
+    }
+
+    private func showAssignedPlaceholder(_ show: Bool) {
+        assignedUserNameLabel.isHidden = show
+        assignedUserAvatarImageView.isHidden = show
+        assignedStaskView.backgroundColor = show ? .lightGray.withAlphaComponent(0.2) : .clear
     }
     
     private func subscribeOnNotificationCenter() {

@@ -12,10 +12,6 @@ final class EditTaskViewModel {
     
     // MARK: - Public Properties
     
-    var viewState: Observable<ViewState> {
-        viewStateSubject
-    }
-    
     var disableApplyButton: Observable<Bool> {
         disableApplyButtonSubject
     }
@@ -27,7 +23,6 @@ final class EditTaskViewModel {
     // MARK: - Private Properties
     
     private let appModel: EditTaskAppModel
-    private let viewStateSubject = BehaviorSubject<ViewState>(value: .loading)
     private let disableApplyButtonSubject = BehaviorSubject<Bool>(value: false)
     private let disposeBag = DisposeBag()
     
@@ -57,6 +52,18 @@ final class EditTaskViewModel {
     
     func descriptionDidChanged(_ text: String) {
         currentTask?.description = text
+    }
+    
+    func assignedDidChanged(_ selectionItem: SelectionItem) {
+        switch selectionItem {
+        case .folders(let array):
+            guard let departament = array.first else { return }
+            currentTask?.assigned = nil
+            currentTask?.departament = departament
+        case .employees(let array):
+            guard let employee = array.first else { return }
+            currentTask?.assigned = employee
+        }
     }
     
     // MARK: - Private Methods

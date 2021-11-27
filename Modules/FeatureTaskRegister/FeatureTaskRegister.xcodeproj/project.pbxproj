@@ -63,6 +63,8 @@
 		28AE89DA275237BD00FCFDE7 /* TaskViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE89A3275237BC00FCFDE7 /* TaskViewState.swift */; };
 		28AE89DB275237BD00FCFDE7 /* loading-indicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 28AE89A5275237BC00FCFDE7 /* loading-indicator.json */; };
 		28AE89DE2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE89DD2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift */; };
+		28AE8A9E2752A99A00FCFDE7 /* PublicSelectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A9D2752A99A00FCFDE7 /* PublicSelectionItem.swift */; };
+		28AE8AA02752E75200FCFDE7 /* SelectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A9F2752E75200FCFDE7 /* SelectionItem.swift */; };
 		F2D77187D915C4E011642F46 /* Pods_FeatureTaskRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F772F69886E9FBB60903459 /* Pods_FeatureTaskRegister.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		28AE89DD2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTaskRegisterModule.swift; sourceTree = "<group>"; };
 		28AE8A82275263F200FCFDE7 /* FeatureEmployeesRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureEmployeesRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28AE8A862752650B00FCFDE7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28AE8A9D2752A99A00FCFDE7 /* PublicSelectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSelectionItem.swift; sourceTree = "<group>"; };
+		28AE8A9F2752E75200FCFDE7 /* SelectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionItem.swift; sourceTree = "<group>"; };
 		2A88FF42CFCBAC7213D4BE75 /* Pods-FeatureTaskRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeatureTaskRegister.debug.xcconfig"; path = "Target Support Files/Pods-FeatureTaskRegister/Pods-FeatureTaskRegister.debug.xcconfig"; sourceTree = "<group>"; };
 		8F772F69886E9FBB60903459 /* Pods_FeatureTaskRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FeatureTaskRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD31C4B48311B1709B5BE273 /* Pods-FeatureTaskRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeatureTaskRegister.release.xcconfig"; path = "Target Support Files/Pods-FeatureTaskRegister/Pods-FeatureTaskRegister.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				28AE8956275237BC00FCFDE7 /* States */,
 				28AE895A275237BC00FCFDE7 /* AppModels */,
 				28AE895E275237BC00FCFDE7 /* UseCases */,
+				28AE8A9F2752E75200FCFDE7 /* SelectionItem.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				28AE89DD2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift */,
+				28AE8A9D2752A99A00FCFDE7 /* PublicSelectionItem.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -662,8 +668,10 @@
 				28AE89D7275237BD00FCFDE7 /* ViewErrorType.swift in Sources */,
 				28AE89B8275237BD00FCFDE7 /* EditTaskViewController.swift in Sources */,
 				28AE89A6275237BD00FCFDE7 /* UseCaseFactory.swift in Sources */,
+				28AE8A9E2752A99A00FCFDE7 /* PublicSelectionItem.swift in Sources */,
 				28AE89B7275237BD00FCFDE7 /* InstantiateFromStoryboard.swift in Sources */,
 				28AE89D1275237BD00FCFDE7 /* EditTaskViewModel.swift in Sources */,
+				28AE8AA02752E75200FCFDE7 /* SelectionItem.swift in Sources */,
 				28AE89C7275237BD00FCFDE7 /* InfoToast.swift in Sources */,
 				28AE89DE2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift in Sources */,
 				28AE89AC275237BD00FCFDE7 /* TasksListAppModel.swift in Sources */,

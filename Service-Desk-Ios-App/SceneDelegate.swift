@@ -21,8 +21,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tasksNavigationController = UINavigationController()
         let tasksModule = FeatureTaskRegisterModule(navigationController: tasksNavigationController)
         
+        tasksModule.setSelectionHandler { (nc, completion)  in
+            let module = EmployeesRegisterModule(navigationController: nc, mode: .oneSelected, selectionHandler: {
+                switch $0 {
+                case .employees(let employees):
+                    let employee = employees.first!
+                    completion(.employee(.init(id: employee.id, name: employee.name, avatarUrl: employee.avatarUrl)))
+                case .folders(let folders):
+                    let folder = folders.first!
+                    completion(.folder(.init(id: folder.id, name: folder.name)))
+                }
+            })
+            
+            module.start()
+        }
+        
         let employeesNavigationController = UINavigationController()
-        let structureModule = EmployeesRegisterModule(navigationController: employeesNavigationController, mode: .show)
+        let structureModule = EmployeesRegisterModule(navigationController: employeesNavigationController, mode: .show, selectionHandler: nil)
         
         let tabBarController = UITabBarController()
         tabBarController.setViewControllers([tasksNavigationController, employeesNavigationController], animated: true)
@@ -53,4 +68,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-

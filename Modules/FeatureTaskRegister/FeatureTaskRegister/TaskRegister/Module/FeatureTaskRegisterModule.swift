@@ -20,8 +20,38 @@ public final class FeatureTaskRegisterModule {
         coordinator = Coordinator(navigationController: navigationController, viewControllerFactory: viewControllerFactory)
     }
     
+    public func setSelectionHandler(_ selectionHandler: @escaping (UINavigationController, @escaping (PublicSelectionItem) -> Void) -> Void) {
+        coordinator.selectionHandler = { (nc, completion) in
+            selectionHandler(nc, {
+                switch $0 {
+                case .folder(let folder):
+                    let departament = Departament(folder)
+                    completion(.folders([departament]))
+                case .employee(let employee):
+                    let employee = Employee(employee)
+                    completion(.employees([employee]))
+                }
+            })
+        }
+    }
+    
     public func start() {
         coordinator.showTasksListViewController()
     }
     
+}
+
+fileprivate extension Departament {
+    init(_ model: PublicSelectionItem.Folder) {
+        self.id = model.id
+        self.name = model.name
+    }
+}
+
+fileprivate extension Employee {
+    init(_ model: PublicSelectionItem.Employee) {
+        self.id = model.id
+        self.name = model.name
+        self.avatarUrl = model.avatarUrl
+    }
 }
