@@ -44,4 +44,8 @@ target 'Service-Desk-Ios-App' do
 
   use_frameworks!
   
+  rx_pods
+  lottie_pods
+  toast_pods
+  
 end

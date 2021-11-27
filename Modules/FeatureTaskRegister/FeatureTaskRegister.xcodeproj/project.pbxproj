@@ -124,6 +124,8 @@
 		28AE89A3275237BC00FCFDE7 /* TaskViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewState.swift; sourceTree = "<group>"; };
 		28AE89A5275237BC00FCFDE7 /* loading-indicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-indicator.json"; sourceTree = "<group>"; };
 		28AE89DD2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTaskRegisterModule.swift; sourceTree = "<group>"; };
+		28AE8A82275263F200FCFDE7 /* FeatureEmployeesRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FeatureEmployeesRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28AE8A862752650B00FCFDE7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A88FF42CFCBAC7213D4BE75 /* Pods-FeatureTaskRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeatureTaskRegister.debug.xcconfig"; path = "Target Support Files/Pods-FeatureTaskRegister/Pods-FeatureTaskRegister.debug.xcconfig"; sourceTree = "<group>"; };
 		8F772F69886E9FBB60903459 /* Pods_FeatureTaskRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FeatureTaskRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD31C4B48311B1709B5BE273 /* Pods-FeatureTaskRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeatureTaskRegister.release.xcconfig"; path = "Target Support Files/Pods-FeatureTaskRegister/Pods-FeatureTaskRegister.release.xcconfig"; sourceTree = "<group>"; };
@@ -499,6 +501,8 @@
 		C2054B5F44DFA0CC49C346C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28AE8A862752650B00FCFDE7 /* Lottie.framework */,
+				28AE8A82275263F200FCFDE7 /* FeatureEmployeesRegister.framework */,
 				8F772F69886E9FBB60903459 /* Pods_FeatureTaskRegister.framework */,
 			);
 			name = Frameworks;

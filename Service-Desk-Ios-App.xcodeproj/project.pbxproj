@@ -128,6 +128,7 @@
 				28323986273FB24C00D65876 /* Frameworks */,
 				28323987273FB24C00D65876 /* Resources */,
 				28AE877A275236D700FCFDE7 /* Embed Frameworks */,
+				6A159FE5FE360E8C19FB3B14 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +186,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6A159FE5FE360E8C19FB3B14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Service-Desk-Ios-App/Pods-Service-Desk-Ios-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F570A778EE4C729512AFBA12 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -7,6 +7,7 @@
 
 import UIKit
 import FeatureTaskRegister
+import FeatureEmployeesRegister
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -20,11 +21,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tasksNavigationController = UINavigationController()
         let tasksModule = FeatureTaskRegisterModule(navigationController: tasksNavigationController)
         
+        let employeesNavigationController = UINavigationController()
+        let structureModule = EmployeesRegisterModule(navigationController: employeesNavigationController, mode: .show)
+        
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([tasksNavigationController], animated: true)
-
+        tabBarController.setViewControllers([tasksNavigationController, employeesNavigationController], animated: true)
+        
         window?.rootViewController = tabBarController
+        
         tasksModule.start()
+        structureModule.start()
+        
         window?.makeKeyAndVisible()
         
     }
