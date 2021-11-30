@@ -29,6 +29,17 @@ def feature_employees_register
   toast_pods
 end
 
+def feature_login
+  rx_pods
+  lottie_pods
+  toast_pods
+end
+
+target 'FeatureLogin' do
+  project 'Modules/FeatureLogin/FeatureLogin.xcodeproj'
+  feature_login
+end
+
 target 'FeatureTaskRegister' do
   project 'Modules/FeatureTaskRegister/FeatureTaskRegister.xcodeproj'
   feature_task_register
