@@ -6,47 +6,30 @@
 //
 
 import UIKit
+import SwiftUI
 import FeatureTaskRegister
 import FeatureEmployeesRegister
+import FeatureLogin
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
 
+    private let tabBarControllerFactory = TabBarControllerFactory()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let tasksNavigationController = UINavigationController()
-        let tasksModule = FeatureTaskRegisterModule(navigationController: tasksNavigationController)
-        
-        tasksModule.setSelectionHandler { (nc, completion)  in
-            let module = EmployeesRegisterModule(navigationController: nc, mode: .oneSelected, selectionHandler: {
-                switch $0 {
-                case .employees(let employees):
-                    let employee = employees.first!
-                    completion(.employee(.init(id: employee.id, name: employee.name, avatarUrl: employee.avatarUrl)))
-                case .folders(let folders):
-                    let folder = folders.first!
-                    completion(.folder(.init(id: folder.id, name: folder.name)))
-                }
-            })
-            
-            module.start()
-        }
-        
-        let employeesNavigationController = UINavigationController()
-        let structureModule = EmployeesRegisterModule(navigationController: employeesNavigationController, mode: .show, selectionHandler: nil)
-        
-        let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([tasksNavigationController, employeesNavigationController], animated: true)
-        
-        window?.rootViewController = tabBarController
-        
-        tasksModule.start()
-        structureModule.start()
-        
+        let loginNavigationController = UINavigationController()
+        let loginModule = LoginModule(rootNavigationController: loginNavigationController, successLoginHandler: { [weak self] in
+            self?.setupTabBarController()
+        })
+
+        window?.rootViewController = loginNavigationController
+        loginModule.start()
         window?.makeKeyAndVisible()
         
     }
@@ -64,6 +47,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
+    }
+    
+    private func setupTabBarController() {
+        window?.rootViewController = tabBarControllerFactory.tabBarController([.tasks, .employees])
     }
 
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282EB5882757F6AC00F5C82F /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EB5872757F6AC00F5C82F /* LoginPageView.swift */; };
+		282EB5922757FEA800F5C82F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282EB5912757FEA800F5C82F /* Media.xcassets */; };
+		282EB5942757FFE500F5C82F /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EB5932757FFE500F5C82F /* Placeholder.swift */; };
+		282EB5A527581C0F00F5C82F /* TabBarControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EB5A427581C0F00F5C82F /* TabBarControllerFactory.swift */; };
+		282EB5A827581C3F00F5C82F /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EB5A727581C3F00F5C82F /* TabBarItems.swift */; };
 		2832398D273FB24C00D65876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832398C273FB24C00D65876 /* AppDelegate.swift */; };
 		2832398F273FB24C00D65876 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832398E273FB24C00D65876 /* SceneDelegate.swift */; };
 		28323991273FB24C00D65876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28323990273FB24C00D65876 /* ViewController.swift */; };
@@ -39,6 +44,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		282EB5872757F6AC00F5C82F /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		282EB5912757FEA800F5C82F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		282EB5932757FFE500F5C82F /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		282EB5A427581C0F00F5C82F /* TabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerFactory.swift; sourceTree = "<group>"; };
+		282EB5A727581C3F00F5C82F /* TabBarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItems.swift; sourceTree = "<group>"; };
 		28323989273FB24C00D65876 /* Service-Desk-Ios-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Service-Desk-Ios-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2832398C273FB24C00D65876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2832398E273FB24C00D65876 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +80,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		282EB58B2757F96D00F5C82F /* LoginFramework */ = {
+			isa = PBXGroup;
+			children = (
+				282EB5872757F6AC00F5C82F /* LoginPageView.swift */,
+				282EB5932757FFE500F5C82F /* Placeholder.swift */,
+			);
+			path = LoginFramework;
+			sourceTree = "<group>";
+		};
+		282EB5A627581C2F00F5C82F /* TabBarControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				282EB5A427581C0F00F5C82F /* TabBarControllerFactory.swift */,
+				282EB5A727581C3F00F5C82F /* TabBarItems.swift */,
+			);
+			path = TabBarControllerFactory;
+			sourceTree = "<group>";
+		};
 		28323980273FB24C00D65876 = {
 			isa = PBXGroup;
 			children = (
@@ -91,13 +119,16 @@
 		2832398B273FB24C00D65876 /* Service-Desk-Ios-App */ = {
 			isa = PBXGroup;
 			children = (
+				282EB58B2757F96D00F5C82F /* LoginFramework */,
 				2832398C273FB24C00D65876 /* AppDelegate.swift */,
 				2832398E273FB24C00D65876 /* SceneDelegate.swift */,
+				282EB5A627581C2F00F5C82F /* TabBarControllerFactory */,
 				28323990273FB24C00D65876 /* ViewController.swift */,
 				28323992273FB24C00D65876 /* Main.storyboard */,
 				28323995273FB24E00D65876 /* Assets.xcassets */,
 				28323997273FB24E00D65876 /* LaunchScreen.storyboard */,
 				2832399A273FB24E00D65876 /* Info.plist */,
+				282EB5912757FEA800F5C82F /* Media.xcassets */,
 			);
 			path = "Service-Desk-Ios-App";
 			sourceTree = "<group>";
@@ -185,6 +216,7 @@
 			files = (
 				28323999273FB24E00D65876 /* LaunchScreen.storyboard in Resources */,
 				28323996273FB24E00D65876 /* Assets.xcassets in Resources */,
+				282EB5922757FEA800F5C82F /* Media.xcassets in Resources */,
 				28323994273FB24C00D65876 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,8 +271,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				28323991273FB24C00D65876 /* ViewController.swift in Sources */,
+				282EB5A827581C3F00F5C82F /* TabBarItems.swift in Sources */,
+				282EB5942757FFE500F5C82F /* Placeholder.swift in Sources */,
 				2832398D273FB24C00D65876 /* AppDelegate.swift in Sources */,
 				2832398F273FB24C00D65876 /* SceneDelegate.swift in Sources */,
+				282EB5A527581C0F00F5C82F /* TabBarControllerFactory.swift in Sources */,
+				282EB5882757F6AC00F5C82F /* LoginPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

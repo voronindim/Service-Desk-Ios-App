@@ -17,7 +17,6 @@ final class ViewControllerFactory {
     
     func tasksListViewController() -> TasksListViewController {
         let tasksListViewController = TasksListViewController()
-        tasksListViewController.tabBarItem.image = UIImage(systemName: "folder.badge.questionmark")
         tasksListViewController.title = "Поручения"
         tasksListViewController.viewModel = viewModelFactory.tasksListViewModel()
         return tasksListViewController
