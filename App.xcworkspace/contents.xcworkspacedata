@@ -5,6 +5,9 @@
       location = "group:Modules"
       name = "Modules">
       <FileRef
+         location = "group:Networking/Networking.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:FeatureLogin/FeatureLogin.xcodeproj">
       </FileRef>
       <FileRef

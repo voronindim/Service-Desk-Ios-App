@@ -35,6 +35,10 @@ def feature_login
   toast_pods
 end
 
+target 'Networking' do
+  project 'Modules/Networking/Networking.xcodeproj'
+end
+
 target 'FeatureLogin' do
   project 'Modules/FeatureLogin/FeatureLogin.xcodeproj'
   feature_login
