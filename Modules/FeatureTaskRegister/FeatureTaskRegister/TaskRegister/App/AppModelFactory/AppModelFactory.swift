@@ -22,7 +22,7 @@ final class AppModelFactory {
         TaskAppModel(taskId: taskId, taskUseCase: useCaseFactory.taskUseCase())
     }
     
-    func editTaskAppModel(task: Task?) -> EditTaskAppModel {
+    func editTaskAppModel(task: UserTask?) -> EditTaskAppModel {
         EditTaskAppModel(editTaskUseCase: useCaseFactory.editTaskUseCase(), selfInfo: selfInfo, editTask: task)
     }
 }

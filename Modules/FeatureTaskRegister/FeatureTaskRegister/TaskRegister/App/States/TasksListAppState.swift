@@ -9,6 +9,6 @@ import Foundation
 
 enum TasksListAppState {
     case loading
-    case loaded([Task])
+    case loaded([UserTask])
     case error(UseCasesError)
 }

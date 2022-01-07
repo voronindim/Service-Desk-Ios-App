@@ -95,7 +95,6 @@ class EditTaskViewController: UIViewController {
     
     @objc private func rightNavigationBarButtonDidTapped() {
         viewModel?.applyChanges()
-        closeHandler?()
     }
     
     private func addActionOnTapAssignedUser() {
@@ -132,10 +131,22 @@ class EditTaskViewController: UIViewController {
         viewModel?.disableApplyButton.subscribe(onNext: { [weak self] isDisable in
             self?.setupApplyButton(isDisable)
         }).disposed(by: disposeBag)
+        
+        viewModel?.successApply.subscribe(onNext: { [weak self] success in
+            self?.updateSuccessViewState(isSuccess: success)
+        })
     }
     
     private func descriptionTextViewAddContentInsets() {
         descriptionTextView.textContainerInset = UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 16)
+    }
+    
+    private func updateSuccessViewState(isSuccess: Bool) {
+        if isSuccess {
+            closeHandler?()
+        } else {
+            InfoToast.show("Возникла ошибка, попробуйте еще раз", image: nil)
+        }
     }
     
     private func setupViewData() {

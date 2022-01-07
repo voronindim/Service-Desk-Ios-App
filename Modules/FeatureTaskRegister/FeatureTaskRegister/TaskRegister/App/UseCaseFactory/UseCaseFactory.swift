@@ -9,18 +9,24 @@ import Foundation
 
 final class UseCaseFactory {
     
+    private let gatewayFactory: GatewayFactory
+    
+    init(gatewayFactory: GatewayFactory) {
+        self.gatewayFactory = gatewayFactory
+    }
+ 
     func tasksListUseCase() -> TasksListUseCase {
-        let useCase = TasksListUseCaseEmplementation()
+        let useCase = TasksListUseCaseEmplementation(gateway: gatewayFactory.tasksListGateway())
         return useCase
     }
     
     func taskUseCase() -> TaskUseCase {
-        let useCase = TaskUseCaseImplementation()
+        let useCase = TaskUseCaseImplementation(gateway: gatewayFactory.taskGateway())
         return useCase
     }
     
     func editTaskUseCase() -> EditTaskUseCase {
-        let useCase = EditTaskUseCaseImplementation()
+        let useCase = EditTaskUseCaseImplementation(gateway: gatewayFactory.editTaskGateway())
         return useCase
     }
 }

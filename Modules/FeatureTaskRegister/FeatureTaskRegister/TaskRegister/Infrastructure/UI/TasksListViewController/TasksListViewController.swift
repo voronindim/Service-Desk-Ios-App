@@ -43,6 +43,11 @@ class TasksListViewController: UIViewController {
         subscribeOnViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.reloadTasksList()
+    }
+    
     // MARK: - Private Methods
     
     private func setupNavigationBar() {
@@ -51,7 +56,7 @@ class TasksListViewController: UIViewController {
     }
     
     private func setupAnimationView() {
-        loadingAnimationView.animation = Animation.named("loading-indicator")
+        loadingAnimationView.animation = Animation.named("loading-indicator", bundle: Bundle(for: TasksListViewController.self))
         loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         loadingAnimationView.center = view.center
         loadingAnimationView.contentMode = .scaleAspectFit

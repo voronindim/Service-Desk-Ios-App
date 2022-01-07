@@ -53,7 +53,7 @@ class TaskViewController: UIViewController {
     }
     
     private func setupAnimationView() {
-        loadingAnimationView.animation = Animation.named("loading-indicator")
+        loadingAnimationView.animation = Animation.named("loading-indicator", bundle: Bundle(for: TaskViewController.self))
         loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         loadingAnimationView.center = view.center
         loadingAnimationView.contentMode = .scaleAspectFit

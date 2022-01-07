@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EditTaskModel {
+struct EditTaskModel: Encodable {
     let id: UUID?
     let title: String
     let description: String

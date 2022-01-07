@@ -17,7 +17,7 @@ final class TaskViewModel {
     }
     
     private(set) var currentTask: TaskViewState?
-    private(set) var task: Task?
+    private(set) var task: UserTask?
     
     // MARK: - Private Properties
     

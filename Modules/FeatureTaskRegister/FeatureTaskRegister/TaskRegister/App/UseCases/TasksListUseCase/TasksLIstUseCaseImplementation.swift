@@ -8,7 +8,19 @@
 import Foundation
 
 final class TasksListUseCaseEmplementation: TasksListUseCase {
-    func reload(userId: UUID) async -> Result<[Task], UseCasesError> {
-        .success([])
+    
+    private let gateway: TasksListGateway
+    
+    init(gateway: TasksListGateway) {
+        self.gateway = gateway
+    }
+    
+    func reload(userId: UUID) async -> Result<[UserTask], UseCasesError> {
+        switch await gateway.reload(userId: userId) {
+        case .success(let tasks):
+            return .success(tasks)
+        case .failure(_):
+            return .failure(.unknownError)
+        }
     }
 }

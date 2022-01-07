@@ -48,7 +48,7 @@
 		28AE89CB275237BD00FCFDE7 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE898F275237BC00FCFDE7 /* ViewControllerFactory.swift */; };
 		28AE89CC275237BD00FCFDE7 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8991275237BC00FCFDE7 /* Employee.swift */; };
 		28AE89CD275237BD00FCFDE7 /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8992275237BC00FCFDE7 /* TaskStatus.swift */; };
-		28AE89CE275237BD00FCFDE7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8993275237BC00FCFDE7 /* Task.swift */; };
+		28AE89CE275237BD00FCFDE7 /* UserTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8993275237BC00FCFDE7 /* UserTask.swift */; };
 		28AE89CF275237BD00FCFDE7 /* EditTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8994275237BC00FCFDE7 /* EditTaskModel.swift */; };
 		28AE89D0275237BD00FCFDE7 /* Departament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8995275237BC00FCFDE7 /* Departament.swift */; };
 		28AE89D1275237BD00FCFDE7 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8998275237BC00FCFDE7 /* EditTaskViewModel.swift */; };
@@ -66,7 +66,28 @@
 		28AE8A9E2752A99A00FCFDE7 /* PublicSelectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A9D2752A99A00FCFDE7 /* PublicSelectionItem.swift */; };
 		28AE8AA02752E75200FCFDE7 /* SelectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A9F2752E75200FCFDE7 /* SelectionItem.swift */; };
 		F2D77187D915C4E011642F46 /* Pods_FeatureTaskRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F772F69886E9FBB60903459 /* Pods_FeatureTaskRegister.framework */; };
+		F59618A727884A8300259843 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59618A627884A8300259843 /* Networking.framework */; };
+		F59618A827884A8300259843 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F59618A627884A8300259843 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F59618AC278892EA00259843 /* TasksListGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618AB278892EA00259843 /* TasksListGateway.swift */; };
+		F59618AE2788934C00259843 /* GatewayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618AD2788934C00259843 /* GatewayError.swift */; };
+		F59618B527889B6900259843 /* GatewayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618B427889B6900259843 /* GatewayFactory.swift */; };
+		F59618B727889CA200259843 /* TaskGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618B627889CA200259843 /* TaskGateway.swift */; };
+		F59618B92788A5FC00259843 /* EditTaskGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618B82788A5FC00259843 /* EditTaskGateway.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F59618A927884A8300259843 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F59618A827884A8300259843 /* Networking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		28AE876D2752366C00FCFDE7 /* FeatureTaskRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatureTaskRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +132,7 @@
 		28AE898F275237BC00FCFDE7 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		28AE8991275237BC00FCFDE7 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		28AE8992275237BC00FCFDE7 /* TaskStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
-		28AE8993275237BC00FCFDE7 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		28AE8993275237BC00FCFDE7 /* UserTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTask.swift; sourceTree = "<group>"; };
 		28AE8994275237BC00FCFDE7 /* EditTaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskModel.swift; sourceTree = "<group>"; };
 		28AE8995275237BC00FCFDE7 /* Departament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Departament.swift; sourceTree = "<group>"; };
 		28AE8998275237BC00FCFDE7 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +154,12 @@
 		2A88FF42CFCBAC7213D4BE75 /* Pods-FeatureTaskRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeatureTaskRegister.debug.xcconfig"; path = "Target Support Files/Pods-FeatureTaskRegister/Pods-FeatureTaskRegister.debug.xcconfig"; sourceTree = "<group>"; };
 		8F772F69886E9FBB60903459 /* Pods_FeatureTaskRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FeatureTaskRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD31C4B48311B1709B5BE273 /* Pods-FeatureTaskRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeatureTaskRegister.release.xcconfig"; path = "Target Support Files/Pods-FeatureTaskRegister/Pods-FeatureTaskRegister.release.xcconfig"; sourceTree = "<group>"; };
+		F59618A627884A8300259843 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59618AB278892EA00259843 /* TasksListGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListGateway.swift; sourceTree = "<group>"; };
+		F59618AD2788934C00259843 /* GatewayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayError.swift; sourceTree = "<group>"; };
+		F59618B427889B6900259843 /* GatewayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayFactory.swift; sourceTree = "<group>"; };
+		F59618B627889CA200259843 /* TaskGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGateway.swift; sourceTree = "<group>"; };
+		F59618B82788A5FC00259843 /* EditTaskGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskGateway.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F59618A727884A8300259843 /* Networking.framework in Frameworks */,
 				F2D77187D915C4E011642F46 /* Pods_FeatureTaskRegister.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +223,7 @@
 				28AE8956275237BC00FCFDE7 /* States */,
 				28AE895A275237BC00FCFDE7 /* AppModels */,
 				28AE895E275237BC00FCFDE7 /* UseCases */,
+				F59618AA278892C500259843 /* Gateways */,
 				28AE8A9F2752E75200FCFDE7 /* SelectionItem.swift */,
 			);
 			path = App;
@@ -429,7 +458,7 @@
 			children = (
 				28AE8991275237BC00FCFDE7 /* Employee.swift */,
 				28AE8992275237BC00FCFDE7 /* TaskStatus.swift */,
-				28AE8993275237BC00FCFDE7 /* Task.swift */,
+				28AE8993275237BC00FCFDE7 /* UserTask.swift */,
 				28AE8994275237BC00FCFDE7 /* EditTaskModel.swift */,
 				28AE8995275237BC00FCFDE7 /* Departament.swift */,
 			);
@@ -507,11 +536,24 @@
 		C2054B5F44DFA0CC49C346C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F59618A627884A8300259843 /* Networking.framework */,
 				28AE8A862752650B00FCFDE7 /* Lottie.framework */,
 				28AE8A82275263F200FCFDE7 /* FeatureEmployeesRegister.framework */,
 				8F772F69886E9FBB60903459 /* Pods_FeatureTaskRegister.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F59618AA278892C500259843 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				F59618B427889B6900259843 /* GatewayFactory.swift */,
+				F59618AB278892EA00259843 /* TasksListGateway.swift */,
+				F59618B627889CA200259843 /* TaskGateway.swift */,
+				F59618B82788A5FC00259843 /* EditTaskGateway.swift */,
+				F59618AD2788934C00259843 /* GatewayError.swift */,
+			);
+			path = Gateways;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,6 +579,7 @@
 				28AE87692752366C00FCFDE7 /* Sources */,
 				28AE876A2752366C00FCFDE7 /* Frameworks */,
 				28AE876B2752366C00FCFDE7 /* Resources */,
+				F59618A927884A8300259843 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -629,10 +672,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AE89A8275237BD00FCFDE7 /* TasksListAppState.swift in Sources */,
+				F59618B527889B6900259843 /* GatewayFactory.swift in Sources */,
 				28AE89A7275237BD00FCFDE7 /* AppModelFactory.swift in Sources */,
 				28AE89BF275237BD00FCFDE7 /* DescriptionTableViewCell.swift in Sources */,
 				28AE89A9275237BD00FCFDE7 /* TaskAppState.swift in Sources */,
 				28AE89D9275237BD00FCFDE7 /* EditTaskViewState.swift in Sources */,
+				F59618AC278892EA00259843 /* TasksListGateway.swift in Sources */,
 				28AE89BC275237BD00FCFDE7 /* StatusTableViewCell.swift in Sources */,
 				28AE89C5275237BD00FCFDE7 /* TasksListViewController.swift in Sources */,
 				28AE89C2275237BD00FCFDE7 /* TaskViewController.swift in Sources */,
@@ -658,6 +703,7 @@
 				28AE89C3275237BD00FCFDE7 /* TasksListTableViewCell.swift in Sources */,
 				28AE89AF275237BD00FCFDE7 /* EditTaskUseCaseImplementation.swift in Sources */,
 				28AE89DA275237BD00FCFDE7 /* TaskViewState.swift in Sources */,
+				F59618B727889CA200259843 /* TaskGateway.swift in Sources */,
 				28AE89D6275237BD00FCFDE7 /* ViewModelFactory.swift in Sources */,
 				28AE89CB275237BD00FCFDE7 /* ViewControllerFactory.swift in Sources */,
 				28AE89C1275237BD00FCFDE7 /* UserTableTableViewCell.swift in Sources */,
@@ -665,8 +711,10 @@
 				28AE89C8275237BD00FCFDE7 /* TaskStatusToStringWithColor.swift in Sources */,
 				28AE89B1275237BD00FCFDE7 /* TaskUseCase.swift in Sources */,
 				28AE89AE275237BD00FCFDE7 /* UseCasesError.swift in Sources */,
+				F59618AE2788934C00259843 /* GatewayError.swift in Sources */,
 				28AE89D7275237BD00FCFDE7 /* ViewErrorType.swift in Sources */,
 				28AE89B8275237BD00FCFDE7 /* EditTaskViewController.swift in Sources */,
+				F59618B92788A5FC00259843 /* EditTaskGateway.swift in Sources */,
 				28AE89A6275237BD00FCFDE7 /* UseCaseFactory.swift in Sources */,
 				28AE8A9E2752A99A00FCFDE7 /* PublicSelectionItem.swift in Sources */,
 				28AE89B7275237BD00FCFDE7 /* InstantiateFromStoryboard.swift in Sources */,
@@ -675,7 +723,7 @@
 				28AE89C7275237BD00FCFDE7 /* InfoToast.swift in Sources */,
 				28AE89DE2752381A00FCFDE7 /* FeatureTaskRegisterModule.swift in Sources */,
 				28AE89AC275237BD00FCFDE7 /* TasksListAppModel.swift in Sources */,
-				28AE89CE275237BD00FCFDE7 /* Task.swift in Sources */,
+				28AE89CE275237BD00FCFDE7 /* UserTask.swift in Sources */,
 				28AE89B2275237BD00FCFDE7 /* TaskUseCaseImplmplementation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

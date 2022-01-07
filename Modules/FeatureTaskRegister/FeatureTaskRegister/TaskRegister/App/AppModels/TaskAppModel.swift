@@ -27,28 +27,23 @@ final class TaskAppModel {
     init(taskId: UUID, taskUseCase: TaskUseCase) {
         self.taskId = taskId
         self.taskUseCase = taskUseCase
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            let random = Int.random(in: 0...4)
-            self.stateSubject.onNext(.loaded(random <= 2 ? mock : mock2))
-        }
+        reloadDetails()
     }
     
     // MARK: - Public Properties
     
     func reloadDetails() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let random = Int.random(in: 0...4)
-            self.stateSubject.onNext(.loaded(random <= 2 ? mock : mock2))
-//            self.stateSubject.onNext(.error(.unknownError))
+        Task {
+            let result = await taskUseCase.detailsTask(id: UUID())
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let task):
+                    self.stateSubject.onNext(.loaded(task))
+                case .failure(let useCaseError):
+                    self.stateSubject.onNext(.error(useCaseError))
+                }
+            }
         }
-
-//        let result = await taskUseCase.detailsTask(id: UUID())
-//        switch result {
-//        case .success(let task):
-//            stateSubject.onNext(.loaded(task))
-//        case .failure(let useCaseError):
-//            stateSubject.onNext(.error(useCaseError))
-//        }
     }
     
     func statusDidChanges(_ status: TaskStatus) {
@@ -57,7 +52,7 @@ final class TaskAppModel {
     
 }
 
-fileprivate var mock = Task(
+fileprivate var mock = UserTask(
     id: UUID(),
     title: "Рейтинги в Мотивации iOS. Не прогружается фон рейтинга после обновления приложения со старой версии на новую",
     description: "Рейтинги в Мотивации iOS. Не прогружается фон рейтинга после обновления приложения со старой версии на новую",
@@ -74,7 +69,7 @@ fileprivate var mock = Task(
 )
 
 
-fileprivate var mock2 = Task(
+fileprivate var mock2 = UserTask(
     id: UUID(),
     title: "Рейтинги dожения со старой версии на новую",
     description: "Рейтинги в Мрейтинга после обновления приложения со старой версии на новую",

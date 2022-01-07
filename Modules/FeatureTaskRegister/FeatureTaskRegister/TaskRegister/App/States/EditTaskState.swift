@@ -8,6 +8,6 @@
 import Foundation
 
 enum EditTaskState {
-    case edit(_ task: Task)
+    case edit(_ task: UserTask)
     case create(_ selfInfo: Employee)
 }

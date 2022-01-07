@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TasksListUseCase {
-    func reload(userId: UUID) async -> Result<[Task], UseCasesError>
+    func reload(userId: UUID) async -> Result<[UserTask], UseCasesError>
 }

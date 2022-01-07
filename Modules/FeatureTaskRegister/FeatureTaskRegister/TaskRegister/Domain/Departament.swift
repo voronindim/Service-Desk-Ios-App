@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Departament: Equatable {
+struct Departament: Equatable, Codable {
     let id: UUID
     let name: String
 }

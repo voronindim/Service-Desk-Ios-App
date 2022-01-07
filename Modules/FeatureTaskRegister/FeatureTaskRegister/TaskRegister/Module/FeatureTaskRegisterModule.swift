@@ -7,12 +7,14 @@
 
 import Foundation
 import UIKit
+import Networking
 
 public final class FeatureTaskRegisterModule {
     private let coordinator: Coordinator
     
-    public init(navigationController: UINavigationController) {
-        let useCaseFactory = UseCaseFactory()
+    public init(navigationController: UINavigationController, apiSession: AsyncGenericApi) {
+        let gatewayFactory = GatewayFactory(aqiSession: apiSession)
+        let useCaseFactory = UseCaseFactory(gatewayFactory: gatewayFactory)
         let appModelFactory = AppModelFactory(useCaseFactory: useCaseFactory)
         let viewModelFactory = ViewModelFactory(appModelFactory: appModelFactory)
         let viewControllerFactory = ViewControllerFactory(viewModelFactory: viewModelFactory)

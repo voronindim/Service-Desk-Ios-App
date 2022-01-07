@@ -16,6 +16,10 @@ final class EditTaskViewModel {
         disableApplyButtonSubject
     }
     
+    var successApply: Observable<Bool> {
+        appModel.successEdit
+    }
+    
     var mode: EditTaskViewMode?
     
     private(set) var currentTask: EditTaskViewState?

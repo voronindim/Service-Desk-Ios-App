@@ -16,14 +16,19 @@ final class EditTaskAppModel {
         stateSubject
     }
     
+    var successEdit: Observable<Bool> {
+        successEditSubject
+    }
+    
     // MARK: - Private Properties
     
     private let stateSubject: BehaviorSubject<EditTaskState>
     private let editTaskUseCase: EditTaskUseCase
+    private let successEditSubject = PublishSubject<Bool>()
     
     // MARK: - Initialize
     
-    init(editTaskUseCase: EditTaskUseCase, selfInfo: Employee, editTask: Task?) {
+    init(editTaskUseCase: EditTaskUseCase, selfInfo: Employee, editTask: UserTask?) {
         self.editTaskUseCase = editTaskUseCase
         if let editTask = editTask {
             stateSubject = .init(value: .edit(editTask))
@@ -33,7 +38,17 @@ final class EditTaskAppModel {
     }
     
     func applyTask(_ model: EditTaskModel) {
-        print(model)
+        Task {
+            let result = await editTaskUseCase.editTask(model)
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.successEditSubject.onNext(true)
+                case .failure(_):
+                    self.successEditSubject.onNext(false)
+                }
+            }
+        }
     }
     
 }

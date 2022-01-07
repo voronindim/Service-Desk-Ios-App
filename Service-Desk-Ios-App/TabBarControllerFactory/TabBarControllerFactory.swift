@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import FeatureTaskRegister
 import FeatureEmployeesRegister
+import Networking
 
 final class TabBarControllerFactory {
     func tabBarController(_ items: [TabBarItems]) -> UITabBarController {
@@ -32,7 +33,7 @@ final class TabBarControllerFactory {
     
     private func tasksTabBarItemController() -> UIViewController {
         let tasksNavigationController = UINavigationController()
-        let module = FeatureTaskRegisterModule(navigationController: tasksNavigationController)
+        let module = FeatureTaskRegisterModule(navigationController: tasksNavigationController, apiSession: AsyncGenericApi())
         setupTaskModule(module)
         module.start()
         tasksNavigationController.tabBarItem.image = UIImage(systemName: "folder.badge.questionmark")

@@ -7,127 +7,483 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CA49444D-0DEC-4A21-8150-A271012ACE90"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "AsyncGenericApi"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2219F001-0211-424F-87E8-2FB71668CC48"
+            uuid = "D84A9E0F-83AC-42BF-88FE-A4E57809F119"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "fetch(type:with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "70E7004A-1DC3-467A-9376-CAC664A0F60C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "fetch(type:with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1AC5DE70-6C8B-41EE-B572-E549EC46BE25"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "postRequest(data:with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "88267CD9-2157-45A9-B408-95AD0DE67AF4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "postRequest(data:with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "39B40418-74CD-4872-B44B-7A18BE9DC090"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "postRequest(data:with:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "39B40418-74CD-4872-B44B-7A18BE9DC090 - b7a37b1c5b92e4c6"
+                  uuid = "D84A9E0F-83AC-42BF-88FE-A4E57809F119 - 6a4a559a0c1e0dd3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Networking.AsyncGenericApi.postRequest&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Encodable, &#x3c4;_1_1: Swift.Decodable&gt;(data: &#x3c4;_1_0, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_1_1"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.postRequest&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(data: &#x3c4;_0_0, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_1"
                   moduleName = "Networking"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "636">
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "512">
                </Location>
                <Location
-                  uuid = "39B40418-74CD-4872-B44B-7A18BE9DC090 - 87894770306e30ec"
+                  uuid = "D84A9E0F-83AC-42BF-88FE-A4E57809F119 - 6a4a559a0c1e0db0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.postRequest&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Encodable, &#x3c4;_1_1: Swift.Decodable&gt;(data: &#x3c4;_1_0, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_1_1"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.postRequest&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(data: &#x3c4;_0_0, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_1"
                   moduleName = "Networking"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "1484">
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1500">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "257F07AA-FB9B-4701-99F3-8C44EB45428C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "postRequest(data:with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "257F07AA-FB9B-4701-99F3-8C44EB45428C - 6a4a559a0c1e0d57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.postRequest&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(data: &#x3c4;_0_0, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_1"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "572">
+               </Location>
+               <Location
+                  uuid = "257F07AA-FB9B-4701-99F3-8C44EB45428C - 6a4a559a0c1e0d15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.postRequest&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(data: &#x3c4;_0_0, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_1"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2011F43B-E296-400D-969C-D50D13102FCA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "postRequest(data:with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2011F43B-E296-400D-969C-D50D13102FCA - c19a20e48a36b323"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Networking.AsyncGenericApi.postRequest&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(data: &#x3c4;_0_0, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_1"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "672">
+               </Location>
+               <Location
+                  uuid = "2011F43B-E296-400D-969C-D50D13102FCA - 6a4a559a0c1e0e0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.postRequest&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(data: &#x3c4;_0_0, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_1"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1700">
+               </Location>
+               <Location
+                  uuid = "2011F43B-E296-400D-969C-D50D13102FCA - 6a4a559a0c1e0ecb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.postRequest&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_1: Swift.Decodable&gt;(data: &#x3c4;_0_0, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_1"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "2072">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76D47B7F-76E3-4BA1-AD28-50F01EEC48D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "fetch(type:with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76D47B7F-76E3-4BA1-AD28-50F01EEC48D3 - f2c53ca17130693"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1100">
+               </Location>
+               <Location
+                  uuid = "76D47B7F-76E3-4BA1-AD28-50F01EEC48D3 - f2c53ca17130693"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1072">
+               </Location>
+               <Location
+                  uuid = "76D47B7F-76E3-4BA1-AD28-50F01EEC48D3 - f2c53ca17130693"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1116">
+               </Location>
+               <Location
+                  uuid = "76D47B7F-76E3-4BA1-AD28-50F01EEC48D3 - f2c53ca17130693"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "692">
+               </Location>
+               <Location
+                  uuid = "76D47B7F-76E3-4BA1-AD28-50F01EEC48D3 - f2c53ca17130693"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1156">
+               </Location>
+               <Location
+                  uuid = "76D47B7F-76E3-4BA1-AD28-50F01EEC48D3 - f2c53ca17130693"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  uuid = "76D47B7F-76E3-4BA1-AD28-50F01EEC48D3 - f2c53ca17130693"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B00DA2FE-E4BF-4A76-9CEB-6EE239CEB3C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Networking/Networking/AsyncGenericApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "fetch(type:with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B00DA2FE-E4BF-4A76-9CEB-6EE239CEB3C6 - f2c53ca171306f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1472">
+               </Location>
+               <Location
+                  uuid = "B00DA2FE-E4BF-4A76-9CEB-6EE239CEB3C6 - f2c53ca171306f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1448">
+               </Location>
+               <Location
+                  uuid = "B00DA2FE-E4BF-4A76-9CEB-6EE239CEB3C6 - f2c53ca171306f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1488">
+               </Location>
+               <Location
+                  uuid = "B00DA2FE-E4BF-4A76-9CEB-6EE239CEB3C6 - f2c53ca171306f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1068">
+               </Location>
+               <Location
+                  uuid = "B00DA2FE-E4BF-4A76-9CEB-6EE239CEB3C6 - f2c53ca171306f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1532">
+               </Location>
+               <Location
+                  uuid = "B00DA2FE-E4BF-4A76-9CEB-6EE239CEB3C6 - f2c53ca171306f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1180">
+               </Location>
+               <Location
+                  uuid = "B00DA2FE-E4BF-4A76-9CEB-6EE239CEB3C6 - f2c53ca171306f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for Networking.AsyncGenericApi.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type, with: Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "Networking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/Networking/Networking/AsyncGenericApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1556">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B2DD533-9E1E-46A0-A16A-9453ACAA179B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/FeatureTaskRegister/FeatureTaskRegister/TaskRegister/App/Gateways/TasksListGateway.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "reload(userId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C2DFA37-23E4-45E2-8FF4-5237733F1E24"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/FeatureTaskRegister/FeatureTaskRegister/TaskRegister/App/Gateways/TasksListGateway.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "reload(userId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C2DFA37-23E4-45E2-8FF4-5237733F1E24 - 3862d723370eae3b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for FeatureTaskRegister.TasksListGateway.reload(userId: Foundation.UUID) async -&gt; Swift.Result&lt;Swift.Array&lt;FeatureTaskRegister.UserTask&gt;, FeatureTaskRegister.GatewayError&gt;"
+                  moduleName = "FeatureTaskRegister"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/FeatureTaskRegister/FeatureTaskRegister/TaskRegister/App/Gateways/TasksListGateway.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  uuid = "6C2DFA37-23E4-45E2-8FF4-5237733F1E24 - 3862d723370eae7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for FeatureTaskRegister.TasksListGateway.reload(userId: Foundation.UUID) async -&gt; Swift.Result&lt;Swift.Array&lt;FeatureTaskRegister.UserTask&gt;, FeatureTaskRegister.GatewayError&gt;"
+                  moduleName = "FeatureTaskRegister"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/FeatureTaskRegister/FeatureTaskRegister/TaskRegister/App/Gateways/TasksListGateway.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  uuid = "6C2DFA37-23E4-45E2-8FF4-5237733F1E24 - 3862d723370eae7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for FeatureTaskRegister.TasksListGateway.reload(userId: Foundation.UUID) async -&gt; Swift.Result&lt;Swift.Array&lt;FeatureTaskRegister.UserTask&gt;, FeatureTaskRegister.GatewayError&gt;"
+                  moduleName = "FeatureTaskRegister"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/de.voronin/repos/Service-Desk-Ios-App/Modules/FeatureTaskRegister/FeatureTaskRegister/TaskRegister/App/Gateways/TasksListGateway.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "452">
                </Location>
             </Locations>
          </BreakpointContent>

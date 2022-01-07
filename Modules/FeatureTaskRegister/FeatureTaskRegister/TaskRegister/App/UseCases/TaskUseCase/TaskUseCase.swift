@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TaskUseCase {
-    func detailsTask(id: UUID) async -> Result<Task, UseCasesError>
+    func detailsTask(id: UUID) async -> Result<UserTask, UseCasesError>
 }

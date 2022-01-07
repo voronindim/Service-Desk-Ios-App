@@ -35,7 +35,7 @@ extension EditTaskViewState {
         )
     }
     
-    init(model: Task) {
+    init(model: UserTask) {
         self.init(
             id: model.id,
             title: model.title,

@@ -46,7 +46,7 @@ extension Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func showEditViewController(task: Task?) {
+    func showEditViewController(task: UserTask?) {
         let viewController = viewControllerFactory.editViewController(task: task)
         viewController.closeHandler = { self.navigationController.dismiss(animated: true) }
         viewController.selectAssignedHandler = selectionHandler
