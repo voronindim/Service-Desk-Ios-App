@@ -55,7 +55,7 @@ class TasksListViewController: UIViewController {
         let rightNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(rightNavigationBarButtonDidTapped))
         navigationItem.rightBarButtonItem = rightNavigationBarButton
         
-        let leftNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "scissors.badge.ellipsis"), style: .plain, target: self, action: #selector(leftNavigattionBarButtonDidTaped))
+        let leftNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3"), style: .plain, target: self, action: #selector(leftNavigattionBarButtonDidTaped))
         navigationItem.leftBarButtonItem = leftNavigationBarButton
     }
     
