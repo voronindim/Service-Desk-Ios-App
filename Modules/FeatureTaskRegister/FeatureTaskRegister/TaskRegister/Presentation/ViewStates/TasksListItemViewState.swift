@@ -15,7 +15,8 @@ struct TasksListItemViewState {
     let createdDate: Date
     let endDate: Date
     let creator: Employee
-    let assigned: Employee
+    let assigned: Employee?
+    let department: Departament?
 }
 
 extension TasksListItemViewState {
@@ -28,7 +29,8 @@ extension TasksListItemViewState {
             createdDate: model.createdDate,
             endDate: model.endDate,
             creator: model.creator,
-            assigned: model.assigned
+            assigned: model.assigned,
+            department: model.departament
         )
     }
 }

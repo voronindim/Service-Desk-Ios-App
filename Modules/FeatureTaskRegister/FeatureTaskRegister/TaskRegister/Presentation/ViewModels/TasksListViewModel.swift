@@ -49,7 +49,18 @@ final class TasksListViewModel {
     }
     
     func reloadTasksList() {
-        appModel.reloadTasksList()
+        appModel.reload()
+    }
+    
+    func filterDidChnaged(_ selectionItem: SelectionItem) {
+        switch selectionItem {
+        case .folders(let array):
+            guard let departament = array.first else { return }
+            appModel.updateDepartmentList(uuid: departament.id)
+        case .employees(let array):
+            guard let employee = array.first else { return }
+            appModel.updatePersonList(uuid: employee.id)
+        }
     }
     
     // MARK: - Private Methods

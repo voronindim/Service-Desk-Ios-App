@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserTableTableViewCell: UITableViewCell {
 
     struct Model {
         let userName: String
         let avatarUrl: URL?
+    }
+    
+    struct DepartmentModel {
+        let name: String
     }
     
     // MARK: - Static Properties
@@ -28,7 +33,18 @@ class UserTableTableViewCell: UITableViewCell {
     func setiViewState(_ model: Model) {
         userAvatarImageView.layer.cornerRadius = userAvatarImageView.frame.height / 2
         userNameLabel.text = model.userName
-        // TODO: set image view
+        if let url = model.avatarUrl {
+            userAvatarImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "person.fill")?.withTintColor(.gray))
+        } else {
+            userAvatarImageView.image = UIImage(systemName: "person.fill")
+        }
+    }
+    
+    func setViewState(_ model: DepartmentModel) {
+        userAvatarImageView.layer.cornerRadius = userAvatarImageView.frame.height / 2
+        userAvatarImageView.image = UIImage(systemName: "person.3.fill")
+        userNameLabel.text = model.name
+        
     }
     
     

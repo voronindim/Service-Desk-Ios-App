@@ -29,4 +29,9 @@ final class UseCaseFactory {
         let useCase = EditTaskUseCaseImplementation(gateway: gatewayFactory.editTaskGateway())
         return useCase
     }
+    
+    func changeStatusUseCase() -> ChangeStatusUseCase {
+        let useCase = ChangeStatusUseCaseImplementation(gateway: gatewayFactory.changeStatusGateway())
+        return useCase
+    }
 }

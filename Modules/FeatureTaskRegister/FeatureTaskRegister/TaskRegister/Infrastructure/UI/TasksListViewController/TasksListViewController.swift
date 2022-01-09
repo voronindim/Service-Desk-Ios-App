@@ -15,6 +15,7 @@ class TasksListViewController: UIViewController {
     
     var viewModel: TasksListViewModel?
     var coordinator: Coordinator?
+    var filterHandler: ((UINavigationController, @escaping (SelectionItem) -> Void) -> Void)?
     
     // MARK: - Private Properties
     
@@ -53,6 +54,17 @@ class TasksListViewController: UIViewController {
     private func setupNavigationBar() {
         let rightNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(rightNavigationBarButtonDidTapped))
         navigationItem.rightBarButtonItem = rightNavigationBarButton
+        
+        let leftNavigationBarButton = UIBarButtonItem(image: UIImage(systemName: "scissors.badge.ellipsis"), style: .plain, target: self, action: #selector(leftNavigattionBarButtonDidTaped))
+        navigationItem.leftBarButtonItem = leftNavigationBarButton
+    }
+    
+    @objc private func leftNavigattionBarButtonDidTaped() {
+        guard let navigationController = navigationController else { return }
+        filterHandler?(navigationController) { [weak self] selectionItem in
+            self?.viewModel?.filterDidChnaged(selectionItem)
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     private func setupAnimationView() {

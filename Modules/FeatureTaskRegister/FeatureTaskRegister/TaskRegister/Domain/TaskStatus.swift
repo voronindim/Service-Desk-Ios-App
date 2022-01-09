@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum TaskStatus: Equatable, Codable {
-    case notStarted
-    case inProgress
-    case review
-    case closed
+enum TaskStatus: Int, Equatable, Codable {
+    case notStarted = 0
+    case inProgress = 1
+    case review = 2
+    case closed = 3
 }

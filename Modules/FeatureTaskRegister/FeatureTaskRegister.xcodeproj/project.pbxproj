@@ -73,6 +73,8 @@
 		F59618B527889B6900259843 /* GatewayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618B427889B6900259843 /* GatewayFactory.swift */; };
 		F59618B727889CA200259843 /* TaskGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618B627889CA200259843 /* TaskGateway.swift */; };
 		F59618B92788A5FC00259843 /* EditTaskGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618B82788A5FC00259843 /* EditTaskGateway.swift */; };
+		F59618C42789DAE200259843 /* ChangeStatusGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618C32789DAE100259843 /* ChangeStatusGateway.swift */; };
+		F59618D2278B2BAB00259843 /* UpdateFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59618D1278B2BAB00259843 /* UpdateFor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -160,6 +162,8 @@
 		F59618B427889B6900259843 /* GatewayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayFactory.swift; sourceTree = "<group>"; };
 		F59618B627889CA200259843 /* TaskGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGateway.swift; sourceTree = "<group>"; };
 		F59618B82788A5FC00259843 /* EditTaskGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskGateway.swift; sourceTree = "<group>"; };
+		F59618C32789DAE100259843 /* ChangeStatusGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeStatusGateway.swift; sourceTree = "<group>"; };
+		F59618D1278B2BAB00259843 /* UpdateFor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,7 @@
 			children = (
 				28AE895B275237BC00FCFDE7 /* TaskAppModel.swift */,
 				28AE895C275237BC00FCFDE7 /* TasksListAppModel.swift */,
+				F59618D1278B2BAB00259843 /* UpdateFor.swift */,
 				28AE895D275237BC00FCFDE7 /* EditTaskAppModel.swift */,
 			);
 			path = AppModels;
@@ -548,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				F59618B427889B6900259843 /* GatewayFactory.swift */,
+				F59618C32789DAE100259843 /* ChangeStatusGateway.swift */,
 				F59618AB278892EA00259843 /* TasksListGateway.swift */,
 				F59618B627889CA200259843 /* TaskGateway.swift */,
 				F59618B82788A5FC00259843 /* EditTaskGateway.swift */,
@@ -683,6 +689,7 @@
 				28AE89C2275237BD00FCFDE7 /* TaskViewController.swift in Sources */,
 				28AE89B6275237BD00FCFDE7 /* ChangeStatusUseCaseImplementation.swift in Sources */,
 				28AE89D8275237BD00FCFDE7 /* TasksListItemViewState.swift in Sources */,
+				F59618D2278B2BAB00259843 /* UpdateFor.swift in Sources */,
 				28AE89C6275237BD00FCFDE7 /* Coordinator.swift in Sources */,
 				28AE89CD275237BD00FCFDE7 /* TaskStatus.swift in Sources */,
 				28AE89CC275237BD00FCFDE7 /* Employee.swift in Sources */,
@@ -701,6 +708,7 @@
 				28AE89B4275237BD00FCFDE7 /* TasksListUseCase.swift in Sources */,
 				28AE89AB275237BD00FCFDE7 /* TaskAppModel.swift in Sources */,
 				28AE89C3275237BD00FCFDE7 /* TasksListTableViewCell.swift in Sources */,
+				F59618C42789DAE200259843 /* ChangeStatusGateway.swift in Sources */,
 				28AE89AF275237BD00FCFDE7 /* EditTaskUseCaseImplementation.swift in Sources */,
 				28AE89DA275237BD00FCFDE7 /* TaskViewState.swift in Sources */,
 				F59618B727889CA200259843 /* TaskGateway.swift in Sources */,

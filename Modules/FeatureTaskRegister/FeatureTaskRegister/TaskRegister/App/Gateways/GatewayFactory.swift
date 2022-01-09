@@ -29,4 +29,9 @@ final class GatewayFactory {
         let editTaskGateway = EditTaskGateway(apiSession: apiSession)
         return editTaskGateway
     }
+    
+    func changeStatusGateway() -> ChangeStatusGateway {
+        let changeStatusGateway = ChangeStatusGateway(apiSession: apiSession)
+        return changeStatusGateway
+    }
 }

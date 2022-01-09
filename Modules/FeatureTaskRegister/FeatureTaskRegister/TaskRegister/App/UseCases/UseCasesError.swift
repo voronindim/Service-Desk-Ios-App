@@ -9,4 +9,5 @@ import Foundation
 
 enum UseCasesError: Error {
     case unknownError
+    case chnageStatusError
 }

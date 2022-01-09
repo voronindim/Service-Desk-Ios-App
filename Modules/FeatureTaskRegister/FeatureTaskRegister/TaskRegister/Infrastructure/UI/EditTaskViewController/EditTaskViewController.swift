@@ -134,7 +134,7 @@ class EditTaskViewController: UIViewController {
         
         viewModel?.successApply.subscribe(onNext: { [weak self] success in
             self?.updateSuccessViewState(isSuccess: success)
-        })
+        }).disposed(by: disposeBag)
     }
     
     private func descriptionTextViewAddContentInsets() {
@@ -153,11 +153,16 @@ class EditTaskViewController: UIViewController {
         guard let viewModel = viewModel else { return }
         guard let task = viewModel.currentTask else { return }
         taskTitleInputField.text = task.title
-        
+
+        assignedUserAvatarImageView.layer.cornerRadius = assignedUserAvatarImageView.frame.height / 2
         if let assigned = task.assigned {
             showAssignedPlaceholder(false)
             assignedUserNameLabel.text = assigned.name
-            assignedUserAvatarImageView.image = UIImage(systemName: "person.fill")
+            if let url = assigned.avatarUrl {
+                assignedUserAvatarImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "person.fill")?.withTintColor(.gray))
+            } else {
+                assignedUserAvatarImageView.image = UIImage(systemName: "person.fill")
+            }
         } else if let departament = task.departament {
             showAssignedPlaceholder(false)
             assignedUserNameLabel.text = departament.name

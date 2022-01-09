@@ -98,7 +98,8 @@ final class EditTaskViewModel {
     }
     
     private func updateApplyButton() {
-        disableApplyButtonSubject.onNext(startTaskValues == currentTask)
+        let assignedNotSelected = currentTask?.departament == nil && currentTask?.assigned == nil
+        disableApplyButtonSubject.onNext(startTaskValues == currentTask || assignedNotSelected)
     }
     
 }
@@ -109,7 +110,7 @@ fileprivate extension EditTaskModel {
             id: model.id,
             title: model.title,
             description: model.description,
-            endDate: model.endDate,
+            endDate: model.endDate ?? Date(),
             creator: model.creator,
             assigned: model.assigned,
             departament: model.departament

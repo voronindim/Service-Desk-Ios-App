@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TasksListTableViewCell: UITableViewCell {
 
@@ -34,6 +35,9 @@ class TasksListTableViewCell: UITableViewCell {
     
     private func setCreator(_ creator: Employee) {
         creatorNameLabel.text = creator.name
-        // TODO: set avatar
+        creatorAvatarImageView.layer.cornerRadius = creatorAvatarImageView.frame.height / 2
+        if let url = creator.avatarUrl {
+            creatorAvatarImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "person")?.withTintColor(.gray))
+        }
     }
 }

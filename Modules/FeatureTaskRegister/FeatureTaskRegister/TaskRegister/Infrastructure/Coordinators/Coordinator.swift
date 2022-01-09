@@ -37,6 +37,7 @@ extension Coordinator {
     func showTasksListViewController() {
         let viewController = viewControllerFactory.tasksListViewController()
         viewController.coordinator = self
+        viewController.filterHandler = selectionHandler
         navigationController.pushViewController(viewController, animated: true)
     }
     

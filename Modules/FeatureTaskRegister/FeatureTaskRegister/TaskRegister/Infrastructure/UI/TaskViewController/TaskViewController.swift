@@ -43,6 +43,11 @@ class TaskViewController: UIViewController {
         setupRefreshControl()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.refresh()
+    }
+    
     // MARK: - Private Methods
     
     private func setupTableView() {
@@ -250,7 +255,11 @@ extension TaskViewController: UITableViewDataSource {
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: UserTableTableViewCell.reuseIdentifier, for: indexPath) as! UserTableTableViewCell
-            cell.setiViewState(UserTableTableViewCell.Model(userName: task.assigned.name, avatarUrl: task.assigned.avatarUrl))
+            if let assigned = task.assigned {
+                cell.setiViewState(UserTableTableViewCell.Model(userName: assigned.name, avatarUrl: assigned.avatarUrl))
+            } else if let department = task.departament {
+                cell.setViewState(UserTableTableViewCell.DepartmentModel(name: department.name))
+            }
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.reuseIdentifier, for: indexPath) as! DescriptionTableViewCell

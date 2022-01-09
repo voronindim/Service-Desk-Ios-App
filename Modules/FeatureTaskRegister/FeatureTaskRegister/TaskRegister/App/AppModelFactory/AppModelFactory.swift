@@ -9,17 +9,19 @@ import Foundation
 
 final class AppModelFactory {
     private let useCaseFactory: UseCaseFactory
-    private let selfInfo: Employee = .init(id: UUID(), name: "Hardcode Dmitrii Voronin", avatarUrl: nil)
-    init(useCaseFactory: UseCaseFactory) {
+    private let selfInfo: Employee
+    
+    init(selfId: UUID, useCaseFactory: UseCaseFactory) {
         self.useCaseFactory = useCaseFactory
+        self.selfInfo = Employee(id: selfId, name: "", avatarUrl: nil)
     }
     
     func tasksListAppModel() -> TasksListAppModel {
-        TasksListAppModel(tasksListUseCase: useCaseFactory.tasksListUseCase())
+        TasksListAppModel(selfId: selfInfo.id, tasksListUseCase: useCaseFactory.tasksListUseCase())
     }
     
     func taskAppModel(taskId: UUID) -> TaskAppModel {
-        TaskAppModel(taskId: taskId, taskUseCase: useCaseFactory.taskUseCase())
+        TaskAppModel(taskId: taskId, taskUseCase: useCaseFactory.taskUseCase(), changeStatusUseCase: useCaseFactory.changeStatusUseCase())
     }
     
     func editTaskAppModel(task: UserTask?) -> EditTaskAppModel {

@@ -15,6 +15,6 @@ struct UserTask {
     let createdDate: Date
     let endDate: Date
     let creator: Employee
-    let assigned: Employee
-    let departament: Departament
+    let assigned: Employee?
+    let departament: Departament?
 }

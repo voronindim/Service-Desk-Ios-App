@@ -9,6 +9,7 @@ import Foundation
 
 enum ViewErrorType {
     case unknownError
+    case chnageStatusError
 }
 
 extension ViewErrorType {
@@ -16,6 +17,8 @@ extension ViewErrorType {
         switch useCaseError {
         case .unknownError:
             self = .unknownError
+        case .chnageStatusError:
+            self = .chnageStatusError
         }
     }
 }

@@ -12,6 +12,9 @@ import FeatureEmployeesRegister
 import Networking
 
 final class TabBarControllerFactory {
+    
+    var selfUserId: UUID?
+    
     func tabBarController(_ items: [TabBarItems]) -> UITabBarController {
         var controllers = [UIViewController]()
         
@@ -33,7 +36,7 @@ final class TabBarControllerFactory {
     
     private func tasksTabBarItemController() -> UIViewController {
         let tasksNavigationController = UINavigationController()
-        let module = FeatureTaskRegisterModule(navigationController: tasksNavigationController, apiSession: AsyncGenericApi())
+        let module = FeatureTaskRegisterModule(navigationController: tasksNavigationController, apiSession: AsyncGenericApi(), selfId: selfUserId!)
         setupTaskModule(module)
         module.start()
         tasksNavigationController.tabBarItem.image = UIImage(systemName: "folder.badge.questionmark")
@@ -42,7 +45,7 @@ final class TabBarControllerFactory {
     
     private func setupTaskModule(_ taskModule: FeatureTaskRegisterModule) {
         taskModule.setSelectionHandler { navigationController, completion in
-            let module = EmployeesRegisterModule(navigationController: navigationController, mode: .oneSelected, selectionHandler: {
+            let module = EmployeesRegisterModule(navigationController: navigationController, mode: .oneSelected, apiSession: AsyncGenericApi(), selectionHandler: {
                 switch $0 {
                 case .employees(let employees):
                     let employee = employees.first!
@@ -58,7 +61,7 @@ final class TabBarControllerFactory {
     
     private func employeesTabBarItemController() -> UIViewController {
         let employeesNavigationController = UINavigationController()
-        let module = EmployeesRegisterModule(navigationController: employeesNavigationController, mode: .show)
+        let module = EmployeesRegisterModule(navigationController: employeesNavigationController, mode: .show, apiSession: AsyncGenericApi())
         module.start()
         employeesNavigationController.tabBarItem.image = UIImage(systemName: "person")
         return employeesNavigationController

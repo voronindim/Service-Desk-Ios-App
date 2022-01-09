@@ -11,7 +11,7 @@ struct EditTaskModel: Encodable {
     let id: UUID?
     let title: String
     let description: String
-    let endDate: Date?
+    let endDate: Date
     let creator: Employee
     let assigned: Employee?
     let departament: Departament?

@@ -17,16 +17,22 @@ def toast_pods
   pod "ToastViewSwift"
 end
 
+def kingfisher_pods
+  pod 'Kingfisher', '~> 7.0'
+end
+
 def feature_task_register
   rx_pods
   lottie_pods
   toast_pods
+  kingfisher_pods
 end
 
 def feature_employees_register
   rx_pods
   lottie_pods
   toast_pods
+  kingfisher_pods
 end
 
 def feature_login
@@ -62,5 +68,5 @@ target 'Service-Desk-Ios-App' do
   rx_pods
   lottie_pods
   toast_pods
-  
+  kingfisher_pods
 end

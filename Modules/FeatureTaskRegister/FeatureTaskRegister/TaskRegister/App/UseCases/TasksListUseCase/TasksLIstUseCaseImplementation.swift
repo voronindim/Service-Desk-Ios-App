@@ -23,4 +23,14 @@ final class TasksListUseCaseEmplementation: TasksListUseCase {
             return .failure(.unknownError)
         }
     }
+    
+    func reload(departmentId: UUID) async -> Result<[UserTask], UseCasesError> {
+        switch await gateway.reload(departmentId: departmentId) {
+        case .success(let tasks):
+            return .success(tasks)
+        case .failure(_):
+            return .failure(.unknownError)
+        }
+    }
+    
 }

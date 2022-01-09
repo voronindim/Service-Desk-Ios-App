@@ -10,7 +10,7 @@ import SwiftUI
 import FeatureTaskRegister
 import FeatureEmployeesRegister
 import FeatureLogin
-
+import Networking
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -24,8 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let loginNavigationController = UINavigationController()
-        let loginModule = LoginModule(rootNavigationController: loginNavigationController, successLoginHandler: { [weak self] in
-            self?.setupTabBarController()
+        let loginModule = LoginModule(rootNavigationController: loginNavigationController, apiSession: AsyncGenericApi(), successLoginHandler: { [weak self] uuid in
+
+            self?.setupTabBarController(uuid: uuid)
         })
 
         window?.rootViewController = loginNavigationController
@@ -49,7 +50,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
     }
     
-    private func setupTabBarController() {
+    private func setupTabBarController(uuid: UUID) {
+        tabBarControllerFactory.selfUserId = uuid
         window?.rootViewController = tabBarControllerFactory.tabBarController([.tasks, .employees])
     }
 
