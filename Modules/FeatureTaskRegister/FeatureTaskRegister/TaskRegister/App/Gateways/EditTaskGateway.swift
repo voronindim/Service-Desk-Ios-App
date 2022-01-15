@@ -10,9 +10,11 @@ import Networking
 
 final class EditTaskGateway {
     private let apiSession: AsyncGenericApi
+    private let token: String
     
-    init(apiSession: AsyncGenericApi) {
+    init(apiSession: AsyncGenericApi, token: String) {
         self.apiSession = apiSession
+        self.token = token
     }
     
     func edit(model: EditTaskModel) async -> Result <Void, GatewayError> {
@@ -33,7 +35,7 @@ final class EditTaskGateway {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type") 
-        return request
+        return request.addToken(token: token)
     }
 }
 

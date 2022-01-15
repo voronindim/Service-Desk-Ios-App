@@ -9,6 +9,11 @@ import UIKit
 import RxSwift
 import Lottie
 
+enum SelectType {
+    case onMe
+    case fromMe
+}
+
 class TasksListViewController: UIViewController {
 
     // MARK: - Public Properties
@@ -60,6 +65,26 @@ class TasksListViewController: UIViewController {
     }
     
     @objc private func leftNavigattionBarButtonDidTaped() {
+        let alert = UIAlertController(title: nil, message: "Какие задачи вы хотите видеть?", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "На мне", style: .default, handler: { [weak self] _ in
+            self?.viewModel?.tasksListOnMe()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "От меня", style: .default, handler: { [weak self] _ in
+            self?.viewModel?.tasksListFromMe()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Выбрать", style: .default, handler: { [weak self] _ in
+            self?.showCustomSelect()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Закрыть", style: .cancel))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showCustomSelect() {
         guard let navigationController = navigationController else { return }
         filterHandler?(navigationController) { [weak self] selectionItem in
             self?.viewModel?.filterDidChnaged(selectionItem)
@@ -90,10 +115,20 @@ class TasksListViewController: UIViewController {
         viewModel?.reloadTasksList()
     }
     
+    private func selectButton(type: SelectType) {
+        switch type {
+        case .onMe:
+            viewModel?.tasksListOnMe()
+        case .fromMe:
+            viewModel?.tasksListFromMe()
+        }
+    }
+    
     private func setup() {
         tasksListTableView.delegate = self
         tasksListTableView.dataSource = self
         view.addSubview(tasksListTableView)
+        
         setConstraints()
         
     }
@@ -109,7 +144,6 @@ class TasksListViewController: UIViewController {
     
     private func setConstraints() {
         var constraints = [NSLayoutConstraint]()
-        
         constraints.append(tasksListTableView.topAnchor.constraint(equalTo: view.topAnchor))
         constraints.append(tasksListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
         constraints.append(tasksListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor))

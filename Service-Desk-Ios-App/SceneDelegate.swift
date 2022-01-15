@@ -24,9 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let loginNavigationController = UINavigationController()
-        let loginModule = LoginModule(rootNavigationController: loginNavigationController, apiSession: AsyncGenericApi(), successLoginHandler: { [weak self] uuid in
+        let loginModule = LoginModule(rootNavigationController: loginNavigationController, apiSession: AsyncGenericApi(), successLoginHandler: { [weak self] uuid, token in
 
-            self?.setupTabBarController(uuid: uuid)
+            self?.setupTabBarController(uuid: uuid, token: token)
         })
 
         window?.rootViewController = loginNavigationController
@@ -50,8 +50,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
     }
     
-    private func setupTabBarController(uuid: UUID) {
+    private func setupTabBarController(uuid: UUID, token: String) {
         tabBarControllerFactory.selfUserId = uuid
+        tabBarControllerFactory.token = token
         window?.rootViewController = tabBarControllerFactory.tabBarController([.tasks, .employees])
     }
 

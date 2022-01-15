@@ -10,9 +10,11 @@ import Networking
 
 final class TaskGateway {
     private let apiSession: AsyncGenericApi
+    private let token: String
     
-    init(apiSession: AsyncGenericApi) {
+    init(apiSession: AsyncGenericApi, token: String) {
         self.apiSession = apiSession
+        self.token = token
     }
     
     func details(id: UUID) async -> Result<UserTask, GatewayError> {
@@ -26,7 +28,7 @@ final class TaskGateway {
     
     private func urlRequest(id: UUID) -> URLRequest {
         let url = baseUrl.appendingPathComponent("Task/\(id.uuidString.lowercased())", isDirectory: false)
-        return URLRequest(url: url)
+        return URLRequest(url: url).addToken(token: token)
     }
 }
 

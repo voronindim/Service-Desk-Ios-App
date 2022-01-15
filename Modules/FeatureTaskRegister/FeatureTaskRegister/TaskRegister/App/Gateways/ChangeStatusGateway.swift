@@ -10,9 +10,11 @@ import Networking
 
 final class ChangeStatusGateway {
     private let apiSession: AsyncGenericApi
+    private let token: String
     
-    init(apiSession: AsyncGenericApi) {
+    init(apiSession: AsyncGenericApi, token: String) {
         self.apiSession = apiSession
+        self.token = token
     }
     
     func changeStatus(_ id: UUID, status: TaskStatus) async -> Result<Void, GatewayError> {
@@ -32,7 +34,7 @@ final class ChangeStatusGateway {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        return request
+        return request.addToken(token: token)
     }
 }
 

@@ -52,6 +52,14 @@ final class TasksListViewModel {
         appModel.reload()
     }
     
+    func tasksListOnMe() {
+        appModel.tasksListOnMe()
+    }
+    
+    func tasksListFromMe() {
+        appModel.tasksListFromMe()
+    }
+    
     func filterDidChnaged(_ selectionItem: SelectionItem) {
         switch selectionItem {
         case .folders(let array):

@@ -10,9 +10,11 @@ import Networking
 
 final class TasksListGateway {
     private let apiSession: AsyncGenericApi
+    private let token: String
     
-    init(apiSession: AsyncGenericApi) {
+    init(apiSession: AsyncGenericApi, token: String) {
         self.apiSession = apiSession
+        self.token = token
     }
     
     func reload(userId: UUID) async -> Result<[UserTask], GatewayError> {
@@ -33,14 +35,28 @@ final class TasksListGateway {
         }
     }
     
+    func tasksListFromMe(creatorId: UUID) async -> Result<[UserTask], GatewayError> {
+        do {
+            let gatewayResult = try await apiSession.fetch(type: [GatewayTask].self, with: urlRequest(creator: creatorId))
+            return .success(gatewayResult.map({ UserTask(model: $0) }))
+        } catch {
+            return .failure(.unknownError)
+        }
+    }
+    
     private func urlRequest(userId: UUID) -> URLRequest {
         let url = baseUrl.appendingPathComponent("Task/assigned/\(userId.uuidString.lowercased())", isDirectory: false)
-        return URLRequest(url: url)
+        return URLRequest(url: url).addToken(token: token)
     }
     
     private func urlRequest(departmentId: UUID) -> URLRequest {
         let url = baseUrl.appendingPathComponent("Task/department/\(departmentId.uuidString.lowercased())", isDirectory: false)
-        return URLRequest(url: url)
+        return URLRequest(url: url).addToken(token: token)
+    }
+    
+    private func urlRequest(creator: UUID) -> URLRequest {
+        let url = baseUrl.appendingPathComponent("Task/creator/\(creator.uuidString.lowercased())", isDirectory: false)
+        return URLRequest(url: url).addToken(token: token)
     }
     
 }

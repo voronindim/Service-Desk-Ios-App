@@ -43,11 +43,21 @@ final class TasksListAppModel {
         switch updateFor {
         case .me:
             reloadList(userId: selfId)
+        case .fromMe:
+            reloadTasksListFromMe()
         case .department(let uUID):
             reloadList(departmentId: uUID)
         case .employee(let uUID):
             reloadList(userId: uUID)
         }
+    }
+    
+    func tasksListOnMe() {
+        updateFor = .me
+    }
+    
+    func tasksListFromMe() {
+        updateFor = .fromMe
     }
     
     func updateDepartmentList(uuid: UUID) {
@@ -58,6 +68,19 @@ final class TasksListAppModel {
         updateFor = uuid == selfId ? .me : .employee(uuid)
     }
     
+    private func reloadTasksListFromMe() {
+        Task {
+            let result = await tasksListUseCase.tasksFromMe(creatorId: selfId)
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let tasks):
+                    self.stateSubject.onNext(.loaded(tasks))
+                case .failure(let useCaseError):
+                    self.stateSubject.onNext(.error(useCaseError))
+                }
+            }
+        }
+    }
     
     private func reloadList(userId: UUID) {
         Task {

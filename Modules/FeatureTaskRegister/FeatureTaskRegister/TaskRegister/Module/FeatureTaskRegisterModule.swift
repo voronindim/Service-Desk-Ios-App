@@ -12,8 +12,8 @@ import Networking
 public final class FeatureTaskRegisterModule {
     private let coordinator: Coordinator
     
-    public init(navigationController: UINavigationController, apiSession: AsyncGenericApi, selfId: UUID) {
-        let gatewayFactory = GatewayFactory(aqiSession: apiSession)
+    public init(navigationController: UINavigationController, apiSession: AsyncGenericApi, selfId: UUID, token: String) {
+        let gatewayFactory = GatewayFactory(aqiSession: apiSession, token: token)
         let useCaseFactory = UseCaseFactory(gatewayFactory: gatewayFactory)
         let appModelFactory = AppModelFactory(selfId: selfId, useCaseFactory: useCaseFactory)
         let viewModelFactory = ViewModelFactory(appModelFactory: appModelFactory)

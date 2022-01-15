@@ -9,6 +9,7 @@ import Foundation
 
 enum UpdateFor {
     case me
+    case fromMe
     case department(UUID)
     case employee(UUID)
 }

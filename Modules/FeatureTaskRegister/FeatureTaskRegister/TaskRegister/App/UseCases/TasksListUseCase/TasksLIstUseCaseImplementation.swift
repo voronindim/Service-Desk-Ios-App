@@ -33,4 +33,13 @@ final class TasksListUseCaseEmplementation: TasksListUseCase {
         }
     }
     
+    func tasksFromMe(creatorId: UUID) async -> Result<[UserTask], UseCasesError> {
+        switch await gateway.tasksListFromMe(creatorId: creatorId) {
+        case .success(let tasks):
+            return .success(tasks)
+        case .failure(_):
+            return .failure(.unknownError)
+        }
+    }
+    
 }
